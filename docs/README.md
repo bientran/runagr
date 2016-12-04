@@ -5,12 +5,12 @@
 [Trello link][trello]
 
 [heroku]: https://runagr.herokuapp.com/
-[trello]: https://trello.com
+[trello]: https://trello.com/b/Bt4zMNjc/runagr
 
 ## Minimum Viable Product
 
 Runagr is a web application inspired by Strava built using Ruby on Rails
-and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
+and React/Redux.  This app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
