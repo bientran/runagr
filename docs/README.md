@@ -20,7 +20,7 @@ sufficient CSS styling:
 - [ ] Creating Activities
 - [ ] Activity feed
 - [ ] Activity stats/totals
-- [ ] Production README [sample](docs/production_readme.md)
+- [ ] Production README
 
 ## Design Docs
 * [View Wireframes][wireframes]
