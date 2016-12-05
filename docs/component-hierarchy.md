@@ -14,56 +14,56 @@
 
 **Activities**
 
-  **ActivityDetailsContainer**
-   - Activity Details
+**ActivityDetailsContainer**
+ - Activity Details
 
-  **ActivityFormContainer**
-   - NavBarContainer
-   - Activity Detail Inputs
+**ActivityFormContainer**
+ - NavBarContainer
+ - Activity Detail Inputs
 
-  **ActivityFeedContainer**
-   - ActivityDetailsContainer
+**ActivityFeedContainer**
+ - ActivityDetailsContainer
 
-  **ActivityContainer**
-   - NavBarContainer
-   - ActivityHeaderContainer
-   - MapContainer
+**ActivityContainer**
+ - NavBarContainer
+ - ActivityHeaderContainer
+ - MapContainer
 
-  **ActivityHeaderContainer**
-   - Activity details
+**ActivityHeaderContainer**
+ - Activity details
 
-  **ActivityStatsContainer**
-   - Weekly/Monthly run stats
+**ActivityStatsContainer**
+ - Weekly/Monthly run stats
 
 **Routes**
 
-  **CreateRouteContainer**
-   - NavBarContainer
-   - MapContainer
-   - RouteFormContainer
+**CreateRouteContainer**
+ - NavBarContainer
+ - MapContainer
+ - RouteFormContainer
 
-  **RouteFormContainer**
-   - Route Details Inputs
+**RouteFormContainer**
+ - Route Details Inputs
 
-  **RouteContainer**
-   - NavBarContainer
-   - MapContainer
-   - RouteDetailsContainer
+**RouteContainer**
+ - NavBarContainer
+ - MapContainer
+ - RouteDetailsContainer
 
-  **RouteDetailsContainer**
-   - Route Details
+**RouteDetailsContainer**
+ - Route Details
 
 **Profile**
 
-  **ProfileContainer**
-   - NavBarContainer
-   - UserDetailsContainer
-   - ActivityFeedContainer
+**ProfileContainer**
+ - NavBarContainer
+ - UserDetailsContainer
+ - ActivityFeedContainer
 
 **Map**
 
-  **MapContainer**
-   - Map Details
+**MapContainer**
+ - Map Details
 
 ## Routes
 
