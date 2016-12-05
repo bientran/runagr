@@ -61,11 +61,6 @@ sufficient CSS styling:
 
 **Objective:** The Activity Stats will be display a synopsis of the users week/month of activity.
 
-### Phase 7: Training Log (1 day)
-
-**objective:** Table of users activity details.
-
-
 ### Bonus Features (TBD)
 - [ ] Friends
 - [ ] Workout Comments
