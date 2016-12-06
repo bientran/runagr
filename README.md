@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Implementation Timeline
 
-Things you may want to cover:
+### Phase 1: Backend setup and Front End User Authentication (2 days)
 
-* Ruby version
+**Objective:** Functioning rails project with front-end Authentication
 
-* System dependencies
+### Phase 2: User Profile (1 day)
 
-* Configuration
+**objective:** User Profiles can be created, edited.
 
-* Database creation
+### Phase 3: Route Model, API, and components (2 days)
 
-* Database initialization
+**Objective:** Routes can be created, read, edited and destroyed through the API.
 
-* How to run the test suite
+### Phase 4: Activity Model, API, and components (2 days)
 
-* Services (job queues, cache servers, search engines, etc.)
+**Objective:** Activities can be created, read, edited and destroyed through the API.
 
-* Deployment instructions
+### Phase 5: Activity Feed (1 day)
 
-* ...
+**Objective:** The Activity Feed will display a user/friends activities on the dashboard.
+
+### Phase 6: Activity Stats (1 day)
+
+**Objective:** The Activity Stats will be display a synopsis of the users week/month of activity.
