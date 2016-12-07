@@ -31,6 +31,7 @@
   border: 1px solid #000;
   padding: 5px 10px;
   background: #fff;
+  border-radius: 3px;
 }
 .auth-name-input:first-child {
   margin-right: 5px;
