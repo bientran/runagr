@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
     // this.props.processForm(user).then(() => this.redirect());
     this.props.processForm(user).then(() => {
       // this.setState({username: "", password: ""})
-      this.props.router.push("/");
+      this.props.router.push("/dashboard");
     });
   }
 
