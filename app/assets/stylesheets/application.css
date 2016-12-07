@@ -10,6 +10,25 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require reset
  *= require_tree .
  *= require_self
  */
+ /* --- RESET --- */
+
+
+ /* --- ELEMENTS --- */
+body {
+  /*background: #ccc;*/
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  background: url("http://www.hdwallpaperspulse.com/wp-content/uploads/2015/01/26/running-image.jpg") no-repeat center center fixed;
+  background-size: 100% 100%;
+}
+
+ /* --- CLEARFIX --- */
+group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
