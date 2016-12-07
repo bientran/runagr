@@ -1,20 +1,24 @@
 import React from 'react';
-// import MarkerManager from '../../util/marker_manager';
 
 class RouteMap extends React.Component {
 
-
-
   componentDidMount() {
-
-
-
     const mapOptions = {
-      center: { lng:-74, lat: 40.72 },
+      center: { lng:-73.969, lat: 40.773 },
       zoom: 14
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
+
+    if (navigator.geolocation) {
+      const that = this;
+      navigator.geolocation.getCurrentPosition(function(pos) {
+        // center = pos.coords;
+        // console.log("yo");
+        const center =  { lng: pos.coords.longitude, lat: pos.coords.latitude };
+        that.map.panTo(center);
+      });
+    }
 
     let service = new google.maps.DirectionsService();
     var poly = new google.maps.Polyline({
@@ -38,7 +42,7 @@ class RouteMap extends React.Component {
 //***********************************
 
 
-
+  //DISTANCE CALCULATION
 
 
     if (path.length < 2) {
@@ -46,6 +50,7 @@ class RouteMap extends React.Component {
       poly.setPath(path);
     } else {
       path.pop();
+
       service.route({
         origin: path.getAt(path.length-1),
         destination: event.latLng,
@@ -58,43 +63,23 @@ class RouteMap extends React.Component {
             path.push(result.routes[0].overview_path[i]);
           }
           let polyLengthInMeters = google.maps.geometry.spherical.computeLength(path.getArray());
-          console.log(polyLengthInMeters / 1609);
+          console.log(`${Math.round((polyLengthInMeters / 1609) * 100) / 100} miles `);
         }
       });
     }
 
-
-
-
-
-
-//*********************************
-
-      console.log(path);
+      console.log(poly.getPath().getArray());
     });
 
-
-
   //const apiKey = "AIzaSyCCajBE7G--_90bCpnZdW9a-xo7Q1u71Kc";
-
-
 
   }
 
   componentDidUpdate() {
-    // this.MarkerManager.updateMarkers(this.props.benches);
-    // var flightPath = new google.maps.Polyline({
-    //   path: this.path,
-    //   geodesic: true,
-    //   strokeColor: '#FF0000',
-    //   strokeOpacity: 1.0,
-    //   strokeWeight: 2
-    // });
-    // flightPath.setMap(this.map);
+
   }
 
   render() {
-
     return(
       <div className="route-map" ref={ map => this.mapNode = map }></div>
     );
