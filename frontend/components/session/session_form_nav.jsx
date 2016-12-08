@@ -9,11 +9,12 @@ class SessionFormNav extends React.Component {
   }
 
   render() {
+    // <a className="auth-link">something</a>
 
     return(
-      <nav>
-        <h1 className="logo">Logo</h1>
-        <a className="authLink">something</a>
+      <nav className="auth-nav group">
+        <h1 className="auth-logo">Logo</h1>
+        {this.props.link}
       </nav>
     );
 

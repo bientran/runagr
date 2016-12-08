@@ -23,3 +23,9 @@ export function createRoute(route) {
       (err) => dispatch(receiveRouteErrors(err.responseJSON)));
   };
 };
+
+export function fetchRouteDetails(id) {
+  return (dispatch) => {
+    APIUtil.fetchRoute(id).then(route => dispatch(receiveRoute(route)));
+  };
+}

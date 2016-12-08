@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router';
 import SessionFormContainer from '../session/session_form_container';
+import MainNav from '../nav/main_nav';
 
 const newSessionLinks = (logout) => (
   <nav>
@@ -29,6 +30,7 @@ const logoutLink = (currentUser, logout, router, clearUser) => (
 const Dashboard = ({currentUser, logout, router, clearUser}) => {
   return(
   <div>
+    <MainNav />
     {currentUser ? logoutLink(currentUser, logout, router, clearUser) : newSessionLinks(logout)}
   </div>
 )};

@@ -1,10 +1,18 @@
 import React from 'react';
+import RouteFormContainer from './route_form_container';
 
 class RouteMap extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { coordinates: "" };
+  }
 
   componentDidMount() {
+    let keyMarkers = [];
+
     const mapOptions = {
       center: { lng:-73.969, lat: 40.773 },
+      // center: center,
       zoom: 14
     };
 
@@ -20,6 +28,23 @@ class RouteMap extends React.Component {
       });
     }
 
+    const startMarker = new google.maps.Marker({
+      map: this.map,
+      title: 'Start',
+      icon: {
+        url:"http://maps.google.com/mapfiles/kml/paddle/grn-blank.png",
+        scaledSize: new google.maps.Size(25, 25)
+      }
+    });
+    const endMarker = new google.maps.Marker({
+      map: this.map,
+      title: 'End',
+      icon: {
+        url:"http://maps.google.com/mapfiles/kml/paddle/red-blank.png",
+        scaledSize: new google.maps.Size(25, 25)
+      }
+    });
+
     let service = new google.maps.DirectionsService();
     var poly = new google.maps.Polyline({
       map: this.map,
@@ -28,29 +53,30 @@ class RouteMap extends React.Component {
       strokeOpacity: .7,
       strokeWeight: 5
     });
-
-
+    const that = this;
     google.maps.event.addListener(this.map, "click", function(event) {
+      const distance = document.getElementById('route-distance');
+      const coords = document.getElementById('route-coords');
+
       let lat = event.latLng.lat();
       let lng = event.latLng.lng();
-
       let path = poly.getPath();
+
+
       path.push(new google.maps.LatLng(lat, lng));
 
-      // poly.setPath(path);
 
-//***********************************
-
-
-  //DISTANCE CALCULATION
+  //DISTANCE CALCULATION / ROUTING
 
 
     if (path.length < 2) {
+      console.log("yo");
+      startMarker.setPosition(event.latLng);
+
       path.push(event.latLng);
       poly.setPath(path);
     } else {
       path.pop();
-
       service.route({
         origin: path.getAt(path.length-1),
         destination: event.latLng,
@@ -64,12 +90,25 @@ class RouteMap extends React.Component {
           }
           let polyLengthInMeters = google.maps.geometry.spherical.computeLength(path.getArray());
           console.log(`${Math.round((polyLengthInMeters / 1609) * 100) / 100} miles `);
+          // distance.value = `${Math.round((polyLengthInMeters / 1609) * 100) / 100} miles `;
+          // coords.value = poly.getPath().getArray();
+          // coords.value = JSON.stringify(keyMarkers);
+          let something = JSON.stringify(path.getArray());
+          console.log(something)
+          console.log(JSON.parse(something));
+          keyMarkers = JSON.stringify(path.getArray());
+          console.log(keyMarkers);
+          that.setState({coordinates: JSON.stringify(path.getArray()),
+            distance: (Math.round((polyLengthInMeters / 1609) * 100) / 100)});
         }
       });
+      endMarker.setPosition(event.latLng);
+
+
     }
 
-      console.log(poly.getPath().getArray());
     });
+
 
   //const apiKey = "AIzaSyCCajBE7G--_90bCpnZdW9a-xo7Q1u71Kc";
 
@@ -81,7 +120,10 @@ class RouteMap extends React.Component {
 
   render() {
     return(
-      <div className="route-map" ref={ map => this.mapNode = map }></div>
+      <section>
+          <div className="route-map" ref={ map => this.mapNode = map }></div>
+          <RouteFormContainer coordinates={this.state.coordinates} distance={this.state.distance} />
+      </section>
     );
   }
 }

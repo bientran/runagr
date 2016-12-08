@@ -42,13 +42,13 @@ class SessionForm extends React.Component {
   }
   signupLink(){
     return (
-      <Link to="/signup" onClick={this.resetFields}>Sign Up</Link>
+      <Link to="/signup" className="auth-link" onClick={this.resetFields}>Sign Up</Link>
     );
   };
 
   loginLink(){
     return (
-      <Link to="/login" onClick={this.resetFields}>Log In</Link>
+      <Link to="/login" className="auth-link" onClick={this.resetFields}>Log In</Link>
     );
   };
 
@@ -103,11 +103,10 @@ class SessionForm extends React.Component {
 
     return(
       <section>
-        <header className="auth-header">
-          <SessionFormNav />
+        <header className="auth-header group">
+          <SessionFormNav link={link}/>
         </header>
 
-        {link}
         <form className="auth-form group" onSubmit={this.handleSubmit}>
           <label className="auth-form-title">{formType}</label>
             <fieldset className="auth-form-fieldset group">
