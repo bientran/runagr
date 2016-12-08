@@ -1,5 +1,91 @@
-#route-distance {
-  width: 200px;
-  height: 50px;
+.map-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-width: 500px;
+  background: #eee;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
 
+}
+
+.route-distance {
+  float:left;
+  padding: 10px;
+}
+
+.route-save-button {
+  float: right;
+  padding: 10px;
+  background: #FC4C02;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.map-form {
+  position: absolute;
+
+  width: 400px;
+  height: 400px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 150px;
+  background: #eee;
+  padding: 5px;
+  border: 1px solid #ccc;
+
+}
+
+.map-form-title {
+  float: left;
+  width: 100%;
+  padding-top: 20px;
+  text-align: center;
+  font-size: 24px;
+  color: #000;
+}
+
+.map-form-fieldset {
+  float: left;
+  padding: 20px;
+
+}
+
+.map-input {
+  float: left;
+  width: 338px;
+  padding: 5px 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.map-description {
+  float: left;
+  padding: 5px 10px;
+  width: 338px;
+  height: 150px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin: 20px 0;
+  border-radius: 4px;
+
+}
+
+.map-submit {
+  float: left;
+  width: 358px;
+  text-align: center;
+  background: #FC4C02;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
 }

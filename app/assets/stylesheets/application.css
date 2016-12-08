@@ -35,6 +35,12 @@ group:after {
 
 /* --- MAP --- */
 .route-map {
-  width: 500px;
-  height: 500px;
+  /*width: 500px;
+  height: 500px;*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  /*min-height: 500px;*/
+  height: 100%;
 }
