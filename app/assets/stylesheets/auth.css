@@ -75,3 +75,22 @@
   font-size: 12px;
   color: #c00;
 }
+
+
+.auth-nav {
+  display: block;
+  margin: 0 auto;
+  background: #fff;
+  padding: 100px 0;
+  width: 500px;
+  padding: 20px;
+}
+
+.auth-link {
+  float: left;
+}
+
+.auth-logo {
+  float: left;
+  text-align: center;
+}
