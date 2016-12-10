@@ -102,7 +102,7 @@ class SessionForm extends React.Component {
     const demoLogin = (formType === 'login') ? this.demoButton() : [];
 
     return(
-      <section>
+      <section className="auth-wrap">
         <header className="auth-header group">
           <SessionFormNav link={link}/>
         </header>

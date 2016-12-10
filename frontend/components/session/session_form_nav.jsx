@@ -13,7 +13,7 @@ class SessionFormNav extends React.Component {
 
     return(
       <nav className="auth-nav group">
-        <h1 className="auth-logo">Logo</h1>
+        <h1 className="main-logo"></h1>
         {this.props.link}
       </nav>
     );
