@@ -8,6 +8,12 @@ class Api::RoutesController < ApplicationController
     end
   end
 
+  def index
+    p params
+    @routes = Route.where(user_id: params[:id])
+    render :index
+  end
+
   def show
     @route = Route.find(params[:id])
     render :show
