@@ -15,16 +15,18 @@ class RouteForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.resetFields = this.resetFields.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.update = this.update.bind(this);
+    this.renderForm = this.renderForm.bind(this);
+    this.hideForm = this.hideForm.bind(this);
 
   }
 
   handleSubmit(e) {
     e.preventDefault();
     // this.setState({user_id: this.props.currentUser.id});
-
-    debugger
-    const route = merge({}, this.state,{coordinates: this.props.coordinates, distance: this.props.distance});
+    this.props.clearRouteErrors;
+    const route = merge({}, this.state,{user_id: this.props.currentUser.id, coordinates: this.props.coordinates, distance: this.props.distance});
     this.props.createRoute(route).then((newRoute) => {
       debugger
       this.props.router.push(`/routes/${newRoute.route.id}`);
@@ -41,11 +43,35 @@ class RouteForm extends React.Component {
 
 
   renderErrors() {
+    const {errors} = this.props;
+    if(!errors){
+      return;
+    }
     return (
       <ul>
-        {this.props.errors.map((error, i) => <li key={i}>{error}</li>)}
+        {errors.map((error, i) => {
+        if(error.includes("Coordinates")){
+          return (<li className="route-error" key={i}>Route can't be empty</li>);
+        }
+        return (<li className="route-error" key={i}>{error}</li>);
+      })}
+
       </ul>
     );
+  }
+
+  renderForm() {
+    this.props.clearRouteErrors();
+    document.getElementById('map-form').style.visibility='visible';
+    document.getElementById('overlay').className='map-overlay';
+  }
+
+  hideForm(e) {
+    this.props.clearRouteErrors();
+    e.preventDefault();
+    document.getElementById('map-form').style.visibility='hidden';
+    document.getElementById('overlay').className='';
+    this.setState({title: "", description: ""})
   }
 
   resetFields() {
@@ -56,12 +82,12 @@ class RouteForm extends React.Component {
 
     return(
       <section>
-          <MainNav />
+          <div onClick={this.hideForm} id="overlay" className=""></div>
         <section className="map-controls group">
           <h1 className="route-distance">Distance: {this.props.distance || 0} mi</h1>
-          <button className="route-save-button">Save</button>
+          <button onClick={this.renderForm} className="route-save-button">Save</button>
         </section>
-        <form className="map-form group" onSubmit={this.handleSubmit}>
+        <form id="map-form" className="map-form group" onSubmit={this.handleSubmit}>
           <label className="map-form-title">Create Route</label>
             <fieldset className="map-form-fieldset group">
 
@@ -75,8 +101,11 @@ class RouteForm extends React.Component {
                 type="text"
                 placeholder="Description">
               </textarea>
-
+              <button onClick={this.hideForm} className="map-cancel">Cancel</button>
               <button className="map-submit">Submit</button>
+              <section className="map-form-errors">
+                {this.renderErrors()}
+              </section>
             </fieldset>
 
         </form>

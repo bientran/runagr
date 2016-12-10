@@ -55,6 +55,15 @@ class RouteMap extends React.Component {
     });
     const that = this;
     google.maps.event.addListener(this.map, "click", function(event) {
+
+      const form = document.getElementById('map-form');
+      if (form.style.visibility === 'visible'){
+        document.getElementById('map-form').style.visibility='hidden';
+        document.getElementById('overlay').className='';
+        return;
+      }
+
+      // document.getElementById('route-map').className='route-map';
       const distance = document.getElementById('route-distance');
       const coords = document.getElementById('route-coords');
 
@@ -118,10 +127,11 @@ class RouteMap extends React.Component {
 
   }
 
+
   render() {
     return(
       <section>
-          <div className="route-map" ref={ map => this.mapNode = map }></div>
+          <div id="route-map" className="route-map" ref={ map => this.mapNode = map }></div>
           <RouteFormContainer coordinates={this.state.coordinates} distance={this.state.distance} />
       </section>
     );

@@ -12,3 +12,11 @@ export const fetchRoute = function(id) {
     url: `api/routes/${id}`
   });
 };
+
+export const fetchAllRoutes = function(id) {
+  return $.ajax({
+    method: "GET",
+    url: `api/routes/`,
+    data: { id }
+  });
+};

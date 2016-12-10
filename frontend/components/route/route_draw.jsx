@@ -56,16 +56,17 @@ class RouteDraw extends React.Component {
 
   render() {
     return(
-      <section className="route">
-        <section className="route-details">
-          <h2 className="route-title">Title:{this.props.route.title}</h2>
-          <h2 className="route-distance">Distance:{this.props.route.distance}</h2>
-          <p className="route-description">Description:{this.props.route.description}</p>
-
-
+      <section className="route group">
+        <section className="route-header">
+          <h2 className="route-title">Title: {this.props.route.title}</h2>
         </section>
-
-        <div className="route-map" ref={ map => this.mapNode = map }></div>
+        <section className="route-details">
+          <div className="display-map" ref={ map => this.mapNode = map }></div>
+          <section className="route-info">
+            <h2 className="route-dist">Distance: {this.props.route.distance} mi</h2>
+            <h2 className="route-description">Description: {this.props.route.description}</h2>
+          </section>
+        </section>
       </section>
     );
   }

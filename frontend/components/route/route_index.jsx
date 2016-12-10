@@ -33,7 +33,7 @@ class RouteIndex extends React.Component {
     // console.log(userRoutes);
     // console.log(values(routes));
     return(
-      <section group>
+      <section>
         <section className="index-header">
           <h1 className="route-index-header">My Routes</h1>
           <Link to="/newroute" className="route-create">Create New Route</Link>

@@ -5,7 +5,8 @@ import RouteDetails from './route_details';
 const mapStateToProps = state => {
 
   return({
-    route: state.route.route
+    route: state.route.route,
+    errors: state.route.errors
   });
 };
 
