@@ -20,8 +20,13 @@ class MainNav extends React.Component {
   }
 
   hideDrop() {
-    // document.getElementById('dropDown').style.display="none";
-    // document.getElementById('dropDown').style.removeProperty('display');
+    document.getElementById('dropDown').style.display = 'none';
+    document.getElementsByClassName('nav-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
+
+  }
+  showDrop() {
+    document.getElementById('dropDown').style.display = 'block';
+    document.getElementsByClassName('nav-link')[0].style.cssText = "border-left:1px solid #ccc; border-right: 1px solid #ccc";
   }
 
   render() {
@@ -33,7 +38,7 @@ class MainNav extends React.Component {
       <nav className="main-nav">
         <h1 className="logo"></h1>
         <ul className="nav-links group">
-          <li className="nav-link">
+          <li className="nav-link" onMouseOver={this.showDrop} onMouseLeave={this.hideDrop}>
             <Link className="dash" to="/dashboard">Dashboard<div className="arrow-down"></div></Link>
             <ul id="dropDown" className="dashboard-links">
               <li className="dash-link" onClick={this.hideDrop}><Link to="/newroute">Create New Route</Link></li>

@@ -109,10 +109,15 @@
   border-bottom: 1px solid #fff;
 }
 .nav-link:hover {
-  border-right: 1px solid #ccc;
-  border-left: 1px solid #ccc;
+  /*border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;*/
   /*border-bottom: 1px solid #fff;*/
 }
+.border-hover {
+  border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
 .nav-link:hover {
   color: #FC4C02;
 }
