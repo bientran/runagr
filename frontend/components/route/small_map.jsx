@@ -24,7 +24,7 @@ class SmallMap extends React.Component {
     if (!this.props.path){
       return (<div></div>);
     }
-    console.log(this.props.path);
+    // console.log(this.props.path);
     const url = (this.props.path === -1 || this.staticMapUrl().length > 8191) ? this.fixImage() : this.staticMapUrl();
     const overlay = (this.props.path === -1 || this.staticMapUrl().length > 8191) ? <h4 className="broken-image-text">Preview Not Available</h4> : <div></div>;
     return(
