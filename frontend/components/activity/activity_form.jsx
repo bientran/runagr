@@ -10,17 +10,19 @@ class ActivityForm extends React.Component {
     this.state = {
       route_id: -1,
       distance: "",
-      duration: 0,
       date: new Date().toISOString().substring(0, 10),
       time: "",
+      hours: "",
+      minutes: "",
+      seconds: "",
       title: "",
       description: "",
       user_id: this.props.currentUser.id,
       activity_type: "Run"
     };
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.resetFields = this.resetFields.bind(this);
-    // this.renderErrors = this.renderErrors.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     this.update = this.update.bind(this);
 
   }
@@ -29,14 +31,36 @@ class ActivityForm extends React.Component {
     this.props.fetchAllRoutes(this.props.currentUser.id);
   }
 
+  renderErrors() {
+    const {errors} = this.props;
+    if(!errors){
+      return;
+    }
+    return (
+      <ul>
+        {errors.map((error, i) => {
+        return (<li className="activity-error" key={i}>{error}</li>);
+      })}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearActivityErrors();
+
     // this.setState({user_id: this.props.currentUser.id});
-    this.props.clearRouteErrors;
-    const activity = merge({}, this.state,{ user_id: this.props.currentUser.id });
+    console.log("DFSDFSDFSDFSD");
+    // this.props.clearRouteErrors;
+    const hours = (this.state.hours.length === 0) ? 0 : this.state.hours;
+    const minutes = (this.state.minutes.length === 0) ? 0 : this.state.minutes;
+    const seconds = (this.state.seconds.length === 0) ? 0 : this.state.seconds;
+    const distance = (this.state.route_id !== -1) ? this.props.userRoutes[this.state.route_id].distance : this.state.distance;
+    const activity = merge({}, this.state,{ user_id: this.props.currentUser.id, distance: distance, hours: hours, minutes: minutes, seconds: seconds });
     this.props.createActivity(activity).then((newActivity) => {
       debugger
-      this.props.router.push(`/activities/${newActivity.id}`);
+      // console.log(newActivity);
+      this.props.router.push(`/activities/${newActivity.activity.id}`);
     });
 
   }
@@ -50,9 +74,11 @@ class ActivityForm extends React.Component {
 
 
 
-  resetFields() {
+  resetFields(e) {
+    e.preventDefault();
     document.getElementById('activity-distance').removeAttribute('disabled');
-    this.setState({route_id: -1, distance: "", duration: 0, title: "", activity_type:"Run", date: new Date().toISOString().substring(0, 10), time: "" , description: ""});
+    this.props.clearActivityErrors();
+    this.setState({route_id: -1, distance: "", hours: "", minutes: "", seconds: "", title: "", activity_type:"Run", date: new Date().toISOString().substring(0, 10), time: "" , description: ""});
   };
 
   render() {
@@ -60,6 +86,7 @@ class ActivityForm extends React.Component {
     const routes = this.props.userRoutes;
     console.log(routes);
     if('route' in routes) {
+      console.log(this.props);
       return (<div></div>);
     }
     let map;
@@ -81,71 +108,112 @@ class ActivityForm extends React.Component {
       distanceField.setAttribute('disabled','true');
     }
 
-    console.log(this.props.userRoutes[1]);
     const routeOptions = values(routes).map((route) => <option key={route.id} value={route.id}>{route.title}</option>);
     return(
-      <section className="activity-form-wrapper">
-        <label>
-          <h4 className="activity-route-preview">Route Preview:</h4>
-          {map()}
-        </label>
+      <section className="activity-form-wrapper group">
         <form id="activity-form" className="activity-form group" onSubmit={this.handleSubmit}>
           <label className="activity-form-title">New Activity</label>
             <fieldset className="activity-form-fieldset group">
-              <label>Title:
-                <input className="activity-title" value={this.state.title}
-                  onChange={this.update("title")}
-                  type="text"
-                  placeholder="Title" />
+              <label className="title-block">Title
+                <section>
+                  <input className="activity-title" value={this.state.title}
+                    onChange={this.update("title")}
+                    type="text"
+                    placeholder="Title" />
+                </section>
+
               </label>
-              <label>Duration:
-                <input title="test" className="activity-duration" value={this.state.duration}
-                  onChange={this.update("duration")}
-                  type="text"
-                  placeholder="minutes" />
+              <label className="duration-block">Duration
+                <section>
+                  <input className="activity-duration"
+                    value={this.state.hours}
+                    onChange={this.update("hours")}
+                    type="text"
+                    placeholder="hr" />
+                  <input className="activity-duration"
+                    value={this.state.minutes}
+                    onChange={this.update("minutes")}
+                    type="text"
+                    placeholder="min" />
+                  <input className="activity-duration"
+                    value={this.state.seconds}
+                    onChange={this.update("seconds")}
+                    type="text"
+                    placeholder="sec" />
+                </section>
               </label>
-              <label>Date:
-                <input className="activity-date" value={this.state.date}
-                  onChange={this.update("date")}
-                  type="date" />
+              <label className="distance-block">Distance
+                <section>
+                  <input id="activity-distance"
+                    className="activity-input"
+                    value={distance}
+                    onChange={this.update("distance")}
+                    type="text" />
+                  <h5 className="distance-units">miles</h5>
+                </section>
               </label>
-              <label>Time:
-                <input className="activity-time" value={this.state.time}
-                  onChange={this.update("time")}
-                  type="time" />
+              <label className="route-block">Route
+                <section>
+                  <select className="activity-route"
+                    onChange={this.update("route_id")}
+                    value={this.state.route_id}>
+                    <option value="-1">No route</option>
+                    {routeOptions}
+                  </select>
+                </section>
               </label>
-              <label>Distance
-                <input id="activity-distance" className="activity-input" value={distance}
-                  onChange={this.update("distance")}
-                  type="text" />
+
+              <label className="type-block">Type
+                <section>
+                  <select className="activity-type"
+                    onChange={this.update("activity_type")}
+                    value={this.state.activity_type}>
+                    <option value="Run">Run</option>
+                    <option value="Bike">Bike</option>
+                  </select>
+                </section>
               </label>
-              <label>Description
-              <textarea className="activity-description" value={this.state.description}
+
+              <section className="date-time-block">
+                <label>Date
+                  <section>
+                    <input className="activity-date"
+                      value={this.state.date}
+                      onChange={this.update("date")}
+                      type="date" />
+                  </section>
+                </label>
+
+                <label>Time<section>
+                  <input className="activity-time"
+                    value={this.state.time}
+                    onChange={this.update("time")}
+                    type="time" />
+                  </section>
+                </label>
+              </section>
+
+              <label>Description:</label>
+              <textarea className="activity-description"
+                value={this.state.description}
                 onChange={this.update("description")}
                 type="text"
                 placeholder="Description">
               </textarea>
-            </label>
-            <label>Route:
-              <select onChange={this.update("route_id")} value={this.state.route_id}>
-                <option value="-1">No route</option>
-                {routeOptions}
-              </select>
-            </label>
-            <label>Type:
-              <select onChange={this.update("activity_type")} value={this.state.activity_type}>
-                <option value="Run">Run</option>
-                <option value="Bike">Bike</option>
-              </select>
-            </label>
-            <button onClick={this.resetFields} className="activity-cancel">Reset</button>
-            <button className="map-submit">Submit</button>
+            <section className="activity-buttons">
+              <button onClick={this.resetFields} className="activity-cancel">Reset</button>
+              <button className="activity-submit">Submit</button>
+            </section>
             <section className="map-form-errors">
-              {"this.renderErrors()"}
+              {this.renderErrors()}
             </section>
           </fieldset>
 
         </form>
+        <section className="activity-route-preview">
+          {map()}
+          <h4 className="activity-preview-label">Route Preview</h4>
+        </section>
       </section>
 
     );

@@ -1,20 +1,20 @@
 import ActivityForm from './activity_form';
-import { createActivity } from '../../actions/activity_actions';
+import { createActivity, clearActivityErrors } from '../../actions/activity_actions';
 import { fetchAllRoutes } from '../../actions/route_actions';
 
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  // errors: state.route.errors
+  errors: state.activity.errors,
   userRoutes: state.route
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createActivity: (route) => dispatch(createActivity(route)),
+    createActivity: (activity) => dispatch(createActivity(activity)),
     fetchAllRoutes: (id) => dispatch(fetchAllRoutes(id)),
-    // clearRouteErrors: () => dispatch(clearRouteErrors()),
+    clearActivityErrors: () => dispatch(clearActivityErrors()),
   };
 };
 
