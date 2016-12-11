@@ -4,7 +4,9 @@ import LargeMap from '../route/large_map';
 class ActivityMap extends React.Component {
 
   componentDidMount() {
-    this.props.fetchRouteDetails(this.props.route_id)
+    if (this.props.route_id !== -1){
+      this.props.fetchRouteDetails(this.props.route_id)
+    }
   }
 
   render() {
