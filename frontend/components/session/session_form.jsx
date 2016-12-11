@@ -83,8 +83,8 @@ class SessionForm extends React.Component {
 
   logDemoAccount(e) {
     e.preventDefault();
-    this.setState({email: "test", password: "password"})
-    const user = {email: "test", password: "password"};
+    this.setState({email: "testuser@example.com", password: "password"})
+    const user = {email: "testuser@example.com", password: "password"};
     this.props.processForm(user).then(() => {
       this.props.router.push("/");
     });
