@@ -10,6 +10,7 @@ import RouteMap from './route/route_map';
 import RouteDetails from './route/route_details';
 import RouteDetailsContainer from './route/route_details_container';
 import RouteIndexContainer from './route/route_index_container';
+import ActivityFormContainer from './activity/activity_form_container';
 
 function _redirectIfLoggedIn(_, replace){
   if (store.getState().session.currentUser) {
@@ -33,6 +34,7 @@ const Root = ({ store }) => (
         <Route path="/newroute" component={ RouteMap } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/routes" component={ RouteIndexContainer } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/routes/:id" component={ RouteDetailsContainer } onEnter={ _redirectIfNotLoggedIn } />
+        <Route path="/activities" component={ ActivityFormContainer } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/test" component={ RouteDetails } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/login" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
         <Route path="/signup" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
