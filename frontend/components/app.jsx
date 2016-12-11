@@ -9,7 +9,9 @@ import MainFooter from './nav/main_footer';
 const App = ({ children }) => (
   <div>
     <MainNav />
-    { children }
+    <section className="main-content">
+      { children }
+    </section>
     <MainFooter />
   </div>
 );
