@@ -38,7 +38,7 @@ class MainNav extends React.Component {
             <ul id="dropDown" className="dashboard-links">
               <li className="dash-link" onClick={this.hideDrop}><Link to="/newroute">Create New Route</Link></li>
               <li className="dash-link" onClick={this.hideDrop}><Link to="/routes">My Routes</Link></li>
-
+              <li className="dash-link" onClick={this.hideDrop}><Link to="/newactivity">Create New Activity</Link></li>
             </ul>
           </li>
 
