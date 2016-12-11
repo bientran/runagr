@@ -9,7 +9,6 @@ class Api::RoutesController < ApplicationController
   end
 
   def index
-    p params
     @routes = Route.where(user_id: params[:id])
     render :index
   end
