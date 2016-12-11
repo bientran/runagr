@@ -2,9 +2,9 @@ import * as APIUtil from '../util/activity_api_util';
 export const RECEIVE_ACTIVITY = 'RECEIVE_ACTIVITY';
 export const RECEIVE_ACTIVITIES = 'RECEIVE_ACTIVITIES';
 
-export const RECEIVE_ACTIVITY_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_ACTIVITY_ERRORS = 'RECEIVE_ACTIVITY_ERRORS';
 // export const CLEAR_ERRORS = 'CLEAR_ERRORS';
-// export const CLEAR_ROUTE_ERRORS = 'CLEAR_ROUTE_ERRORS';
+export const CLEAR_ACTIVITY_ERRORS = 'CLEAR_ACTIVITY_ERRORS';
 
 
 export const receiveActivity = (activity) => ({
@@ -17,14 +17,14 @@ export const receiveActivities = (activities) => ({
   activities: activities
 });
 
-export const receiveActivityErrors = (activity) => ({
+export const receiveActivityErrors = (errors) => ({
   type: RECEIVE_ACTIVITY_ERRORS,
   errors: errors
 });
-//
-// export const clearRouteErrors = () => ({
-//   type: CLEAR_ROUTE_ERRORS
-// });
+
+export const clearActivityErrors = () => ({
+  type: CLEAR_ACTIVITY_ERRORS
+});
 
 export function createActivity(activity) {
   return (dispatch) => {

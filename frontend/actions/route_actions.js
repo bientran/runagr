@@ -2,7 +2,7 @@ import * as APIUtil from '../util/route_api_util';
 export const RECEIVE_ROUTE = 'RECEIVE_ROUTE';
 export const RECEIVE_ROUTES = 'RECEIVE_ROUTES';
 
-export const RECEIVE_ROUTE_ERRORS = 'RECEIVE_ERRORS';
+export const RECEIVE_ROUTE_ERRORS = 'RECEIVE_ROUTE_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 export const CLEAR_ROUTE_ERRORS = 'CLEAR_ROUTE_ERRORS';
 
