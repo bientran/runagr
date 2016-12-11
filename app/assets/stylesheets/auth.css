@@ -59,7 +59,7 @@
   border-radius: 3px;
 }
 .auth-submit:hover {
-  background: #EC4C02;
+  background: #DC4C02;
 }
 
 .auth-form-title {
@@ -84,7 +84,7 @@
   margin-top: 5px;
 }
 .auth-demo:hover {
-  background: #EC4C02;
+  background: #DC4C02;
 }
 
 .auth-errors {

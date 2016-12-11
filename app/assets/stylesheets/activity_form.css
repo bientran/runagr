@@ -1,0 +1,193 @@
+.activity-form-wrapper {
+  margin: 20px;
+  width: 740px;
+  padding: 20px;
+  /*background: #F7F7F7;*/
+}
+
+.activity-form {
+  width: 530px;
+  float: left;
+  color: #333333;
+}
+
+.activity-form-title {
+  width: 100%;
+  float: left;
+  font-size: 24px;
+  padding-bottom: 20px;
+  font-weight: lighter;
+}
+
+.activity-form-fieldset {
+
+}
+.title-block {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+.duration-block {
+  /*float: left;*/
+  padding-top: 20px;
+  /*width: 200px;*/
+}
+
+.distance-block {
+  /*float: left;*/
+  padding: 20px 40px 0px 40px;
+}
+
+.activity-title {
+  float: left;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 490px;
+}
+.duration {
+}
+
+.activity-duration {
+  float: left;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-right: 0;
+  width: 30px;
+}
+.activity-duration:last-of-type {
+  border-right: 1px solid #ccc;
+}
+
+.activity-date {
+  float: left;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  margin-right: 40px;
+}
+
+.date-time-block {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  float: left;
+  width: 500px;
+  margin-top: 10px;
+  padding: 20px 0 25px 0;
+  margin-bottom: 25px;
+}
+
+.date-time-block > label {
+  float: left;
+  font-size: 12px;
+}
+
+.activity-time {
+  float: left;
+  background: #fff;
+  border: 1px solid #ccc;
+}
+
+#activity-distance {
+  float: left;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 50px;
+}
+
+.activity-description {
+  float: left;
+  background: #fff;
+  padding: 5px;
+  border: 1px solid #ccc;
+  width: 490px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.activity-type {
+  float: left;
+  font-size: 14px;
+  background: #fff;
+  height: 28px;
+  border: 0;
+  outline: 1px solid #CCC;
+}
+
+.activity-route {
+  float: left;
+  font-size: 14px;
+  background: #fff;
+  height: 28px;
+  border: 0;
+  outline: 1px solid #CCC;
+  /*width: 60px;*/
+  width: 110px;
+}
+
+.route-block {
+
+  padding-top: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+.type-block {
+  padding-top: 20px;
+}
+
+input {
+  font-size: 14px;
+}
+.activity-form-fieldset > label {
+  float: left;
+  /*text-align: center;*/
+  font-size: 12px;
+}
+.distance-units {
+  float: left;
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 5px
+}
+
+.activity-route-preview {
+  text-align: center;
+  float: left;
+  width: 200px;
+  background: #F0F0F0;
+  border: 1px solid #ccc;
+}
+.activity-preview-label {
+  color: #333333;
+  margin: 0;
+  padding: 5px;
+}
+
+.activity-cancel {
+  float: left;
+  background: #F6F6F6;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-right: 20px;
+}
+
+.activity-submit {
+  float: left;
+  background: #FC4C02;
+  color: #fff;
+  padding: 10px;
+  margin-right: 20px;
+}
+
+.activity-submit:hover {
+  background: #DC4C02;
+}
+
+.activity-buttons {
+  float: left;
+  border-top: 1px solid #ccc;
+  padding-top: 25px;
+  margin-top: 5px;
+  width: 500px;
+}
