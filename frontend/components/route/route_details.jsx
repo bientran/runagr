@@ -7,6 +7,7 @@ import RouteDraw from './route_draw';
 class RouteDetails extends React.Component {
   componentDidMount() {
     this.props.fetchRouteDetails(this.props.routeParams.id);
+    window.scrollTo(0, 0);
 
     // // const keyMarkers = [{lng:-73.963, lat: 40.773},{lng:-73.960, lat: 40.773}];
     // const keyMarkers = [{lat: 40.725, lng: -73.996 }, {lat: 40.727, lng: -73.997}, {lat: 40.720, lng: -73.997}];

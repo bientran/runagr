@@ -9,9 +9,7 @@ import { Link } from 'react-router';
 
 class RouteIndex extends React.Component {
   componentDidMount() {
-    // this.props.fetchRouteDetails(this.props.routeParams.id);
     this.props.fetchAllRoutes(this.props.currentUser.id);
-    console.log(this.props);
   }
 
   componentDidUpdate() {
@@ -21,7 +19,6 @@ class RouteIndex extends React.Component {
 
   render() {
     const routes = this.props.routes;
-    // console.log(this.props);
     if('route' in routes) {
       return (<div></div>);
     }
@@ -30,8 +27,6 @@ class RouteIndex extends React.Component {
       return <RouteAtGlance key={`route-${route.id}`} route={route} />
     });
     const test = userRoutes[0];
-    // console.log(userRoutes);
-    // console.log(values(routes));
     return(
       <section>
         <section className="index-header">

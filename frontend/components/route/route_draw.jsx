@@ -64,6 +64,7 @@ class RouteDraw extends React.Component {
         <section className="route-details">
           <LargeMap route={this.props.route} />
           <section className="route-info">
+            <h2 className="route-author">By: {this.props.route.author.first_name} {this.props.route.author.last_name}</h2>
             <h2 className="route-dist">Distance: {this.props.route.distance} mi</h2>
             <h2 className="route-description">Description: {this.props.route.description}</h2>
           </section>

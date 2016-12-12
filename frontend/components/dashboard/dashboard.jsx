@@ -28,9 +28,10 @@ const logoutLink = (currentUser, logout, router, clearUser) => (
 );
 
 const Dashboard = ({currentUser, logout, router, clearUser}) => {
+  // {currentUser ? logoutLink(currentUser, logout, router, clearUser) : newSessionLinks(logout)}
+
   return(
   <div>
-    {currentUser ? logoutLink(currentUser, logout, router, clearUser) : newSessionLinks(logout)}
   </div>
 )};
 
