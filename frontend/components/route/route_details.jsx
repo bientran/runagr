@@ -73,7 +73,6 @@ class RouteDetails extends React.Component {
 
 
   render() {
-    console.log(this.props);
     let {route} = this.props;
     if (this.props.location.pathname.startsWith('/routes/')){
       if(!route){

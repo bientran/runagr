@@ -4,9 +4,10 @@ import React from 'react';
 class LargeMap extends React.Component {
   componentDidMount() {
 
-
     let {route} = this.props;
-    route.coordinates = JSON.parse(route.coordinates);
+    if (typeof route.coordinates !== "object"){
+      route.coordinates = JSON.parse(route.coordinates);
+    }
     const mapOptions = {
       center: route.coordinates[0],
       zoom: 14

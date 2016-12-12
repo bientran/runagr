@@ -22,7 +22,6 @@ class RouteMap extends React.Component {
       const that = this;
       navigator.geolocation.getCurrentPosition(function(pos) {
         // center = pos.coords;
-        // console.log("yo");
         const center =  { lng: pos.coords.longitude, lat: pos.coords.latitude };
         that.map.panTo(center);
       });
@@ -79,7 +78,6 @@ class RouteMap extends React.Component {
 
 
     if (path.length < 2) {
-      console.log("yo");
       startMarker.setPosition(event.latLng);
 
       path.push(event.latLng);
@@ -98,15 +96,11 @@ class RouteMap extends React.Component {
             path.push(result.routes[0].overview_path[i]);
           }
           let polyLengthInMeters = google.maps.geometry.spherical.computeLength(path.getArray());
-          console.log(`${Math.round((polyLengthInMeters / 1609) * 100) / 100} miles `);
           // distance.value = `${Math.round((polyLengthInMeters / 1609) * 100) / 100} miles `;
           // coords.value = poly.getPath().getArray();
           // coords.value = JSON.stringify(keyMarkers);
           let something = JSON.stringify(path.getArray());
-          console.log(something)
-          console.log(JSON.parse(something));
           keyMarkers = JSON.stringify(path.getArray());
-          console.log(keyMarkers);
           that.setState({coordinates: JSON.stringify(path.getArray()),
             distance: (Math.round((polyLengthInMeters / 1609) * 100) / 100)});
         }

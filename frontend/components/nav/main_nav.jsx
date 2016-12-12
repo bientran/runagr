@@ -54,7 +54,6 @@ class MainNav extends React.Component {
       return <div></div>;
     }
     // let src = <%= asset_url("logo_small_orange.png") %>;
-    console.log(this.props);
     return(
       <nav className="main-nav">
         <h1 className="logo"></h1>

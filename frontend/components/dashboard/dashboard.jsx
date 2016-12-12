@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router';
 import SessionFormContainer from '../session/session_form_container';
 import MainNav from '../nav/main_nav';
+import ActivityFeedContainer from '../activity/activity_feed/activity_feed_container';
 
 const newSessionLinks = (logout) => (
   <nav>
@@ -30,9 +31,9 @@ const logoutLink = (currentUser, logout, router, clearUser) => (
 const Dashboard = ({currentUser, logout, router, clearUser}) => {
   // {currentUser ? logoutLink(currentUser, logout, router, clearUser) : newSessionLinks(logout)}
 
+  // <ActivityFeedContainer />
   return(
-  <div>
-  </div>
+    <div></div>
 )};
 
 export default withRouter(Dashboard);
