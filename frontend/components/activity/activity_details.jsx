@@ -7,15 +7,17 @@ import ActivityMapContainer from './activity_map_container';
 class ActivityDetails extends React.Component {
 
   componentDidMount() {
-    this.props.fetchActivityDetails(this.props.routeParams.id)
+    this.props.fetchActivityDetails(this.props.routeParams.id);
+    window.scrollTo(0, 0);
   }
 
   formatPace(activity) {
     const durationInSeconds = activity.hours * 3600 + activity.minutes * 60 + activity.seconds;
     let pace = durationInSeconds / activity.distance;
     let paceHr = (Math.floor(pace / 3600) > 0) ? `${Math.floor(pace / 3600)}:` : "";
+    let hourTemp = Math.floor(pace / 3600);
     pace = pace % 3600;
-    let paceMin = Math.floor(pace / 60);
+    let paceMin = ((hourTemp > 0) && (Math.floor(pace / 60) < 10)) ? (`0${Math.floor(pace / 60)}`) : (Math.floor(pace / 60));
     pace = pace % 60;
     let paceSec = (Math.floor(pace) < 10) ? `0${Math.floor(pace)}` : Math.floor(pace);
     return `${paceHr}${paceMin}:${paceSec}`;
@@ -29,8 +31,10 @@ class ActivityDetails extends React.Component {
   }
 
   formatDate(activity) {
-    let ampm = (parseInt(activity.time.slice(0,2)) >= 12) ? "PM" : "AM";
-    let time = (parseInt(activity.time.slice(0,2)) >= 12) ? `${parseInt(activity.time.slice(0,2))-12}${activity.time.slice(2)}` : activity.time;
+    const t = parseInt(activity.time.slice(0,2));
+    let ampm = (t >= 12) ? "PM" : "AM";
+    let time = (t >= 12) ? `${parseInt(activity.time.slice(0,2))-12}${activity.time.slice(2)}` : activity.time;
+    time = (t === 0) ? `12${activity.time.slice(2)}` : time;
     if (time[0] === '0'){
       time = time.slice(1);
     }
@@ -49,19 +53,23 @@ class ActivityDetails extends React.Component {
 
     return(
       <section className="activity-show group">
-        <section className="activity-show-content">
-          <section className="activity-show-date-time">
-            <h5 className="activity-show-time">{this.formatDate(activity)}</h5>
+        <section className="activity-header">
+          <p>{activity.activity_type} - {activity.author.first_name} {activity.author.last_name}</p>
+        </section>
+        <section className="activity-block group">
+          <section className="activity-show-content">
+            <section className="activity-show-date-time">
+              <p className="activity-show-time">{this.formatDate(activity)}</p>
+            </section>
+            <h1 className="activity-show-title">Title: {activity.title}</h1>
+            <p className="activity-show-description">Description: {activity.description}</p>
           </section>
-          <h1 className="activity-show-title">Title: {activity.title}</h1>
-          <p className="activity-show-description">Description: {activity.description}</p>
+          <section className="activity-show-stats">
+            <div className="activity-show-pace"><h5>{this.formatPace(activity)} mi</h5>Pace</div>
+            <div className="activity-show-duration"><h5>{this.formatDuration(activity)}</h5>Duration</div>
+            <div className="activity-show-distance"><h5>{activity.distance} mi</h5>Distance</div>
+          </section>
         </section>
-        <section className="activity-show-stats">
-          <p className="activity-show-pace">Pace: {this.formatPace(activity)}/mi</p>
-          <p className="activity-show-duration">Duration: {this.formatDuration(activity)}</p>
-          <p className="activity-show-distance">Distance: {activity.distance} mi</p>
-        </section>
-
 
         <ActivityMapContainer route_id={activity.route_id} />
       </section>

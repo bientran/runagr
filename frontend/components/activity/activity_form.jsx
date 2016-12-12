@@ -49,17 +49,12 @@ class ActivityForm extends React.Component {
     e.preventDefault();
     this.props.clearActivityErrors();
 
-    // this.setState({user_id: this.props.currentUser.id});
-    console.log("DFSDFSDFSDFSD");
-    // this.props.clearRouteErrors;
     const hours = (this.state.hours.length === 0) ? 0 : this.state.hours;
     const minutes = (this.state.minutes.length === 0) ? 0 : this.state.minutes;
     const seconds = (this.state.seconds.length === 0) ? 0 : this.state.seconds;
-    const distance = (this.state.route_id !== -1) ? this.props.userRoutes[this.state.route_id].distance : this.state.distance;
+    const distance = (this.state.route_id == -1) ? this.state.distance : this.props.userRoutes[this.state.route_id].distance;
     const activity = merge({}, this.state,{ user_id: this.props.currentUser.id, distance: distance, hours: hours, minutes: minutes, seconds: seconds });
     this.props.createActivity(activity).then((newActivity) => {
-      debugger
-      // console.log(newActivity);
       this.props.router.push(`/activities/${newActivity.activity.id}`);
     });
 
@@ -82,15 +77,11 @@ class ActivityForm extends React.Component {
   };
 
   render() {
-    console.log(this.props);
     const routes = this.props.userRoutes;
-    console.log(routes);
     if('route' in routes) {
-      console.log(this.props);
       return (<div></div>);
     }
     let map;
-    console.log(this.state.route_id);
     let distance = 0;
     const distanceField = document.getElementById('activity-distance');
 
