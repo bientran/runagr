@@ -33,6 +33,13 @@ class Activity < ApplicationRecord
         message: "must be in the following format: hr:min" }, presence: true
   validates :distance, numericality: { :greater_than => 0 }, presence: true
 
-  belongs_to :route
+  validate :duration
+  def duration
+       if (hours + minutes + seconds == 0)
+         errors.messages[:base] << "Duration can't be 0"
+       end
+  end
+
+  # belongs_to :route
   belongs_to :user
 end
