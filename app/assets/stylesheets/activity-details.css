@@ -1,0 +1,95 @@
+.activity-show {
+  padding: 20px;
+  width: 700px;
+  color: #333333;
+}
+
+.activity-header {
+  width: 680px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-bottom: 0;
+}
+
+.activity-show-content {
+  width: 310px;
+  padding: 20px;
+  float: left;
+  height: 100%;
+  border-right: 1px solid #ccc;
+}
+.activity-block {
+  border: 1px solid #ccc;
+  /*border-bottom: 0;*/
+  float: left;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.activity-show-time {
+  font-size: 14px;
+}
+
+.activity-show-title {
+  font-size: 24px;
+  font-weight: lighter;
+  padding: 5px 0;
+}
+
+.activity-show-description {
+  font-size: 14px;
+}
+
+.activity-show-stats {
+  margin-top: 20px;
+  float: left;
+  border-left: 0;
+  /*padding: 20px;*/
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  margin-left: 5px;
+  font-size: 12px;
+  width: 340px;
+}
+.activity-show-pace > h5 {
+  font-size: 20px;
+  /*display: inline-block;*/
+  margin: 0;
+
+}
+
+.activity-show-pace {
+  float: left;
+  padding: 0;
+}
+
+.activity-show-duration > h5 {
+  font-size: 20px;
+  margin: 0;
+  /*display: inline-block;*/
+}
+
+.activity-show-duration {
+  float: left;
+  padding: 0px 30px;
+}
+
+
+.activity-show-distance > h5 {
+  font-size: 20px;
+  margin: 0;
+  /*display: inline-block;*/
+}
+
+.activity-show-distance {
+  /*display: inline-block;*/
+  float: left;
+  padding: 0;
+}
+
+.stat-label {
+/*float: left;*/
+/*display: inline-block;*/
+}

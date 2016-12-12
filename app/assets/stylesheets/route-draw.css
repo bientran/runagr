@@ -19,6 +19,7 @@
   float: left;
   font-size: 24px;
   padding-bottom: 20px;
+  font-weight: lighter;
 }
 
 .route-dis {
@@ -69,6 +70,12 @@
   padding: 20px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
+}
+
+.route-author {
+  margin-left: 740px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
 }
 
 .display-map {

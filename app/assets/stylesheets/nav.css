@@ -4,9 +4,10 @@
   height: 58px;
   z-index: 30;
   background: #fff;
+
   /*padding: 20px;*/
   border-bottom: 1px solid #ccc;
-  min-width: 500px;
+  min-width: 800px;
 }
 
 .logo {
@@ -52,10 +53,10 @@
   margin: 0 auto;
   margin-bottom: 150px;
   /*padding: 10px;*/
-  margin-top: 10px;
+  margin-top: 50px;
   padding: 20px;
   padding-left: 0px;
-  width: 105px;
+  width: 150px;
   height: auto;
   background: url("logo_large_orange.png");
 
@@ -65,13 +66,27 @@
 }
 
 .arrow-down {
-  margin: 27px 0px 0px 3px;
-  width: 0;
+  margin: 21px 0px 5px 3px;
+  /*width: 0;
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
   border-top: 8px solid #000000;
-  display: inline-block;
+  display: inline-block;*/
+  /*float: left;*/
+  border-style: solid;
+	border-width: 0.15em 0.15em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.25em;
+	position: relative;
+	top: 0.10em;
+	transform: rotate(135deg);
+	/*vertical-align: top;*/
+	width: 0.45em;
+
+
 }
 
 .nav-profile {
@@ -81,7 +96,9 @@
 .nav-links {
   float: left;
   /*padding: 0 10px;*/
-  margin-right: 20px;
+  margin-right: 0px;
+  margin-left: 20px;
+
 }
 
 .nav-link {
@@ -131,7 +148,6 @@
   position: absolute;
   left: -1px;
   top: 58px;
-  /*padding-right: 20px;*/
   font-size: 14px;
   white-space: nowrap;
   background: #fff;
@@ -140,7 +156,8 @@
   border-bottom: 1px solid #ccc;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  /*overflow: hidden;*/
+  overflow: hidden;
+
 }
 .dash-link {
   width: 200px;
@@ -158,5 +175,5 @@
 }
 
 .dash-link:hover {
-  background: #ddd;
+  background: #F6F6F6;
 }

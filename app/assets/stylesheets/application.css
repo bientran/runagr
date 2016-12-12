@@ -69,3 +69,7 @@ group:after {
   float: left;
   border: 1px solid #ccc;
 }
+
+.page-body {
+  width: 100%;
+}

@@ -4,9 +4,10 @@
   left: 0;*/
   width: 100%;
   min-width: 500px;
-  background: #eee;
+  background: #F6F6F6;
   padding: 5px;
   border-bottom: 1px solid #ccc;
+  color: #333333;
   /*box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);*/
 }
 
