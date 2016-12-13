@@ -26,12 +26,14 @@ class ActivityRow extends React.Component {
 
   render() {
     const {activity} = this.props;
-
+    const title = (activity.title.length>20) ? `${activity.title.slice(0,17)}...` : activity.title;
+    let d = activity.date.split("-");
+    let date = new Date(d[0],d[1]-1,d[2]).toDateString();
     return (
       <tr className="activity-index-row">
         <td>{activity.activity_type}</td>
-        <td>{new Date(Date.parse(activity.date)).toDateString()}</td>
-        <td><Link to={`/activities/${activity.id}`}>{activity.title}</Link></td>
+        <td>{date}</td>
+        <td><Link to={`/activities/${activity.id}`}>{title}</Link></td>
         <td>{this.formatDuration(activity)}</td>
         <td>{this.formatPace(activity)}</td>
         <td>{activity.distance}</td>

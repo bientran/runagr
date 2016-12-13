@@ -32,12 +32,14 @@ import { values } from 'lodash';
 
 class Dashboard extends React.Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchAllActivities(this.props.currentUser.id);
   }
 
   render() {
     let activities = this.props.activities
+    console.log("DSFDSFSFSFSFD");
+    console.log(this.props);
     if('activity' in activities || !activities) {
       return (<div></div>);
     }

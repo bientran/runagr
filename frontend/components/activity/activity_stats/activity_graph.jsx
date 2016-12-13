@@ -1,7 +1,7 @@
 import React from 'react';
 
 class ActivityGraph extends React.Component {
-  
+
   render() {
     const {dailyMiles} = this.props;
     return(
@@ -11,13 +11,13 @@ class ActivityGraph extends React.Component {
           </thead>
           <tbody>
             <tr>
-              <td className="bar"><p style={{height: `${dailyMiles[0]*3}px`}}></p></td>
               <td className="bar"><p style={{height: `${dailyMiles[1]*3}px`}}></p></td>
               <td className="bar"><p style={{height: `${dailyMiles[2]*3}px`}}></p></td>
               <td className="bar"><p style={{height: `${dailyMiles[3]*3}px`}}></p></td>
               <td className="bar"><p style={{height: `${dailyMiles[4]*3}px`}}></p></td>
               <td className="bar"><p style={{height: `${dailyMiles[5]*3}px`}}></p></td>
               <td className="bar"><p style={{height: `${dailyMiles[6]*3}px`}}></p></td>
+              <td className="bar"><p style={{height: `${dailyMiles[0]*3}px`}}></p></td>
             </tr>
             <tr>
               <td className="day">M</td>

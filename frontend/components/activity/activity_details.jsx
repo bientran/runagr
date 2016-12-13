@@ -26,8 +26,8 @@ class ActivityDetails extends React.Component {
     if (time[0] === '0'){
       time = time.slice(1);
     }
-    let date = new Date(Date.parse(activity.date)).toDateString();
-
+    let d = activity.date.split("-");
+    let date = new Date(d[0],d[1]-1,d[2]).toDateString();
     return `${time}${ampm} on ${date}`;
   }
 

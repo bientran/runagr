@@ -104,7 +104,11 @@ class ActivityStats extends React.Component {
   getDailyMiles(activities) {
     let days = [0,0,0,0,0,0,0];
     activities.forEach((activity) => {
-      const date = ((new Date(activity.date).getDay()-1) % 7);
+      let d = activity.date.split("-");
+      let x = new Date(d[0],d[1]-1,d[2]);
+      // const date = ((new Date(activity.date).getDay()-1) % 7);
+      // const date = ((x.getDay()-1)% 7);
+      const date = x.getDay();
       days[date] += (parseFloat(activity.distance));
     });
     return days.map((day) => Math.round(day*100)/100);
@@ -114,8 +118,12 @@ class ActivityStats extends React.Component {
     const {activities} = this.props;
     // console.log(activities);
     let weeklyActivities = activities.filter((activity) => {
-      const date = new Date(Date.parse(activity.date));
-      return (date >= this.getMonday(new Date()));
+      // const date = new Date(Date.parse(activity.date));
+      let d = activity.date.split("-");
+      let date = new Date(d[0],d[1]-1,d[2]);
+      let nextMonday = new Date();
+      nextMonday.setDate(nextMonday.getDate() + 7);
+      return (date >= this.getMonday(new Date()) && date < nextMonday);
     });
     const dailyMiles = this.getDailyMiles(weeklyActivities);
     const weeklyMiles = this.getWeeklyMiles(weeklyActivities);

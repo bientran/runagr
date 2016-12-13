@@ -59,9 +59,14 @@ class ActivityFeed extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let activities = this.props.activities
-    if('activity' in activities) {
+    console.log("DAAAAAAAAA");
+    console.log(this.props);
+    console.log(values(activities));
+    // if('activity' in activities) {
+    //   return (<div></div>);
+    // }
+    if (values(activities).length === 0){
       return (<div></div>);
     }
     let currentDate = null;
