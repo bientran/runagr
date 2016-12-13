@@ -4,7 +4,6 @@ class SmallMap extends React.Component {
 
   encodePath() {
     let path = [];
-    // console.log(this.props.path);
     if (typeof this.props.path !== "object"){
       JSON.parse(this.props.path).forEach((coord) => path.push(`${coord.lat},${coord.lng}`));
     } else {
@@ -15,16 +14,19 @@ class SmallMap extends React.Component {
 
   staticMapUrl() {
     let urlBase = "https://maps.googleapis.com/maps/api/staticmap?";
-    // let size = `size=200x200`;
     let size;
     if(this.props.x){
       size = `size=${this.props.x}x${this.props.y}`;
     } else {
       size = `size=200x200`;
     }
-    let path = `&path=weight:3%7Ccolor:blue|${this.encodePath()}`;
+    let coords = JSON.parse(this.props.path);
+    console.log(coords[0].lat);
+    let startMarker = `&markers=size:small|color:green|${coords[0].lat},${coords[0].lng}`;
+    let endMarker = `&markers=size:small|color:red|${coords[coords.length-1].lat},${coords[coords.length-1].lng}`;
+    let path = `&path=weight:3|color:blue|${this.encodePath()}`;
     let key = "&key=AIzaSyBIpNsO03UZ-PFgUmeL-RZAeZDIlgVmC8c";
-    return urlBase + size + key +path ;
+    return urlBase + size + startMarker + endMarker + key +path ;
   }
 
   fixImage() {
