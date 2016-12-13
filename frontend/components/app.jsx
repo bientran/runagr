@@ -5,7 +5,6 @@ import MainNav from './nav/main_nav';
 import MainNavContainer from './nav/main_nav_container';
 import MainFooter from './nav/main_footer';
 
-// NOTE: MAKE CONDITIONAL RENDER FOR NAV
 
 const App = ({ children }) => (
   <div className="page-body">

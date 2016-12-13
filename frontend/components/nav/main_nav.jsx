@@ -22,11 +22,11 @@ class MainNav extends React.Component {
     );
   }
 
-  hideDrop() {
+  hideDash() {
     document.getElementById('dropDown').style.display = 'none';
     document.getElementsByClassName('nav-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
   }
-  showDrop() {
+  showDash() {
     document.getElementById('dropDown').style.display = 'block';
     document.getElementsByClassName('nav-link')[0].style.cssText = "border-left:1px solid #ccc; border-right: 1px solid #ccc";
   }
@@ -49,6 +49,11 @@ class MainNav extends React.Component {
     document.getElementsByClassName('nav-profile-link')[0].style.cssText = "border-left:1px solid #ccc; border-right: 1px solid #ccc";
   }
 
+  highlight() {
+    document.getElementsByClassName('nav-link')[0].style.cssText = "border-bottom: 5px solid red";
+  }
+
+
   render() {
     if (this.props.location.pathname === '/signup' || this.props.location.pathname === '/login') {
       return <div></div>;
@@ -58,11 +63,11 @@ class MainNav extends React.Component {
       <nav className="main-nav">
         <h1 className="logo"></h1>
         <ul className="nav-links group">
-          <li className="nav-link" onMouseOver={this.showDrop} onMouseLeave={this.hideDrop}>
+          <li className="nav-link" onMouseOver={this.showDash} onMouseLeave={this.hideDash}>
             <Link className="dash" to="/dashboard">Dashboard<div className="arrow-down"></div></Link>
             <ul id="dropDown" className="dashboard-links">
-              <li className="dash-link" onClick={this.hideDrop}><Link to="/newroute">Create New Route</Link></li>
-              <li className="dash-link" onClick={this.hideDrop}><Link to="/routes">My Routes</Link></li>
+              <li className="dash-link" onClick={this.hideDash}><Link to="/newroute">Create New Route</Link></li>
+              <li className="dash-link" onClick={this.hideDash}><Link to="/routes">My Routes</Link></li>
             </ul>
           </li>
         </ul>
@@ -78,7 +83,7 @@ class MainNav extends React.Component {
         </ul>
         <ul className="profile-nav">
           <li className="nav-profile-link" onMouseOver={this.showProfile} onMouseLeave={this.hideProfile}>
-            <Link className="profile" to="/users">{this.props.currentUser.first_name} {this.props.currentUser.last_name}<div className="arrow-down"></div></Link>
+            <Link className="profile" to="">{this.props.currentUser.first_name} {this.props.currentUser.last_name}<div className="arrow-down"></div></Link>
             <ul id="profile-dropDown" className="profile-links">
               <li className="profile-link" onClick={this.hideProfile}>{this.logoutLink(this.props.currentUser, this.props.logout, this.props.router, this.props.clearUser)}</li>
             </ul>

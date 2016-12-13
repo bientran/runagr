@@ -31,9 +31,9 @@ const logoutLink = (currentUser, logout, router, clearUser) => (
 const Dashboard = ({currentUser, logout, router, clearUser}) => {
   // {currentUser ? logoutLink(currentUser, logout, router, clearUser) : newSessionLinks(logout)}
 
-  // <ActivityFeedContainer />
+  // <div></div>
   return(
-    <div></div>
+    <ActivityFeedContainer />
 )};
 
 export default withRouter(Dashboard);
