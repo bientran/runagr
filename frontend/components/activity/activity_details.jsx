@@ -2,25 +2,13 @@ import React from 'react';
 import SmallMap from '../route/small_map';
 import ActivityMap from './activity_map';
 import ActivityMapContainer from './activity_map_container';
-
+import ActivityPace from './activity_pace';
 
 class ActivityDetails extends React.Component {
 
   componentDidMount() {
     this.props.fetchActivityDetails(this.props.routeParams.id);
     window.scrollTo(0, 0);
-  }
-
-  formatPace(activity) {
-    const durationInSeconds = activity.hours * 3600 + activity.minutes * 60 + activity.seconds;
-    let pace = durationInSeconds / activity.distance;
-    let paceHr = (Math.floor(pace / 3600) > 0) ? `${Math.floor(pace / 3600)}:` : "";
-    let hourTemp = Math.floor(pace / 3600);
-    pace = pace % 3600;
-    let paceMin = ((hourTemp > 0) && (Math.floor(pace / 60) < 10)) ? (`0${Math.floor(pace / 60)}`) : (Math.floor(pace / 60));
-    pace = pace % 60;
-    let paceSec = (Math.floor(pace) < 10) ? `0${Math.floor(pace)}` : Math.floor(pace);
-    return `${paceHr}${paceMin}:${paceSec}`;
   }
 
   formatDuration(activity) {
@@ -65,7 +53,7 @@ class ActivityDetails extends React.Component {
             <p className="activity-show-description">Description: {activity.description}</p>
           </section>
           <section className="activity-show-stats">
-            <div className="activity-show-pace"><h5>{this.formatPace(activity)} mi</h5>Pace</div>
+            <div className="activity-show-pace"><ActivityPace activity={activity} unit_string={" mi"} />Pace</div>
             <div className="activity-show-duration"><h5>{this.formatDuration(activity)}</h5>Duration</div>
             <div className="activity-show-distance"><h5>{activity.distance} mi</h5>Distance</div>
           </section>

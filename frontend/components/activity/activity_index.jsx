@@ -18,6 +18,12 @@ class ActivityIndex extends React.Component {
     if (a.date < b.date){
       return 1;
     }
+    if (a.time < b.time){
+      return -1;
+    }
+    if (a.time > b.time){
+      return 1;
+    }
     return 0;
   }
 
