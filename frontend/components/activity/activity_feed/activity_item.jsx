@@ -1,28 +1,49 @@
 import React from 'react';
 import SmallMap from '../../route/small_map';
+import ActivityPace from '../activity_pace';
+import { Link } from 'react-router';
 
 class ActivityItem extends React.Component {
-  componentDidMount() {
-    this.props.fetchRouteDetails(this.props.activity.route_id);
+
+  formatTime(activity) {
+    const t = parseInt(activity.time.slice(0,2));
+    let ampm = (t >= 12) ? "PM" : "AM";
+    let time = (t >= 12) ? `${parseInt(activity.time.slice(0,2))-12}${activity.time.slice(2)}` : activity.time;
+    time = (t === 0) ? `12${activity.time.slice(2)}` : time;
+    if (time[0] === '0'){
+      time = time.slice(1);
+    }
+    return `${time}${ampm}`;
   }
 
   render() {
-    let {route} = this.props;
-    if(!route.route) {
-      return (<div></div>);
-    }
-    route = route.route;
+    let route = this.props.routeDetails;
+    console.log(this.props);
+
     const {activity} = this.props;
+    let map;
+    if (activity.route_id === -1 || !route){
+      map = [];
+    } else {
+      map = <SmallMap x={185} y={107} path={route.coordinates} />;
+    }
+
     return (
-      <section className="activity-feed-item">
-        {new Date(Date.parse(activity.date)).toDateString()}
-        {activity.title}
-        {activity.author.first_name}{activity.author.last_name}
-        {activity.time} {activity.distance} {"pace goes here"}
-        <section className="activity-feed-map">
-          <SmallMap routeId={activity.route_id} path={route.coordinates} />
+      <li className="feed-item group">
+        <section className="feed-item-details">
+          <div className="item-circle"></div>
+          <div className="feed-item-title"><Link to={`/activities/${activity.id}`}>{activity.title}</Link></div>
+          <div className="feed-item-author">{activity.author.first_name} {activity.author.last_name}</div>
+          <ul className="feed-item-stats">
+            <li className="feed-item-time">{this.formatTime(activity)}</li>
+            <li className="feed-item-distance">{activity.distance} miles</li>
+            <li className="feed-item-pace"><ActivityPace activity={activity} unit_string={"/mi"}/></li>
+          </ul>
         </section>
-      </section>
+        <section className="activity-feed-map group">
+          <Link to={`/activities/${activity.id}`}>{map}</Link>
+        </section>
+      </li>
     );
   }
 }

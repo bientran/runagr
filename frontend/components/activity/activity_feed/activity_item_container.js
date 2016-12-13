@@ -3,12 +3,12 @@ import { fetchRouteDetails } from '../../../actions/route_actions';
 import ActivityItem from './activity_item';
 
 const mapStateToProps = state => ({
-  route: state.route
+  // route: state.route
 });
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchRouteDetails: (id) => dispatch(fetchRouteDetails(id))
+    // fetchRouteDetails: (id) => dispatch(fetchRouteDetails(id))
   };
 };
 
