@@ -1,6 +1,7 @@
 import React from 'react';
 import { values } from 'lodash';
 import { Link } from 'react-router';
+import ActivityGraph from './activity_graph';
 
 class ActivityStats extends React.Component {
   constructor(props) {
@@ -60,6 +61,9 @@ class ActivityStats extends React.Component {
   }
 
   formatPace(hours, minutes, seconds) {
+    if(hours === 0 && minutes === 0 && seconds === 0) {
+      return "";
+    }
     if(seconds > 60) {
       minutes += (Math.floor(seconds / 60));
       seconds = seconds % 60;
@@ -83,6 +87,9 @@ class ActivityStats extends React.Component {
   }
 
   getWeeklyPace(miles, hours, minutes, seconds) {
+    if( miles === 0 ) {
+      return "";
+    }
     console.log([miles,hours,minutes,seconds]);
     let time = hours * 3600 + minutes * 60 + seconds;
     time/=miles;
@@ -113,17 +120,15 @@ class ActivityStats extends React.Component {
     const dailyMiles = this.getDailyMiles(weeklyActivities);
     const weeklyMiles = this.getWeeklyMiles(weeklyActivities);
     const duration = this.getWeeklyDuration(weeklyActivities);
-    const weeklyDuration = this.formatDuration(...duration);
+    let weeklyDuration = this.formatDuration(...duration);
     let weeklyPace = this.getWeeklyPace(weeklyMiles,...duration);
     console.log(weeklyPace);
     if(weeklyPace != "") {
       weeklyPace += "/mi";
     }
-    console.log(weeklyActivities);
-    console.log(this.getWeeklyMiles(weeklyActivities));
-    console.log(this.formatDuration(...this.getWeeklyDuration(weeklyActivities)));
-    console.log(this.getWeeklyPace(this.getWeeklyMiles(weeklyActivities),...this.getWeeklyDuration(weeklyActivities)));
-    console.log(this.getDailyMiles(weeklyActivities));
+    if(weeklyDuration === "0"){
+      weeklyDuration = "";
+    }
 
     return (
       <section className="stats">
@@ -134,34 +139,7 @@ class ActivityStats extends React.Component {
             <h2 className="stats-duration">{weeklyDuration}</h2>
             <h2 className="stats-pace">{weeklyPace}</h2>
           </section>
-
-          <section className="stats-graph-wrapper">
-            <table className="stats-graph">
-              <thead>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="bar"><p style={{height: `${dailyMiles[0]*3}px`}}></p></td>
-                  <td className="bar"><p style={{height: `${dailyMiles[1]*3}px`}}></p></td>
-                  <td className="bar"><p style={{height: `${dailyMiles[2]*3}px`}}></p></td>
-                  <td className="bar"><p style={{height: `${dailyMiles[3]*3}px`}}></p></td>
-                  <td className="bar"><p style={{height: `${dailyMiles[4]*3}px`}}></p></td>
-                  <td className="bar"><p style={{height: `${dailyMiles[5]*3}px`}}></p></td>
-                  <td className="bar"><p style={{height: `${dailyMiles[6]*3}px`}}></p></td>
-                </tr>
-                <tr>
-                  <td className="day">M</td>
-                  <td className="day">T</td>
-                  <td className="day">W</td>
-                  <td className="day">T</td>
-                  <td className="day">F</td>
-                  <td className="day">S</td>
-                  <td className="day">S</td>
-                </tr>
-
-              </tbody>
-            </table>
-          </section>
+          <ActivityGraph dailyMiles={dailyMiles} />
         </section>
       </section>
     );

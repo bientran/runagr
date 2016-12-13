@@ -38,7 +38,7 @@ class Dashboard extends React.Component {
 
   render() {
     let activities = this.props.activities
-    if('activity' in activities) {
+    if('activity' in activities || !activities) {
       return (<div></div>);
     }
     return(

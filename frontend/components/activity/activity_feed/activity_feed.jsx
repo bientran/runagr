@@ -59,6 +59,7 @@ class ActivityFeed extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     let activities = this.props.activities
     if('activity' in activities) {
       return (<div></div>);
