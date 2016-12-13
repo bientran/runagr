@@ -14,6 +14,7 @@ import ActivityFormContainer from './activity/activity_form_container';
 import ActivityDetailsContainer from './activity/activity_details_container';
 import ActivityIndexContainer from './activity/activity_index_container';
 import ActivityStats from './activity/activity_stats/activity_stats';
+import ProfileContainer from './profile/profile_container';
 
 function _redirectIfLoggedIn(_, replace){
   if (store.getState().session.currentUser) {
@@ -40,6 +41,7 @@ const Root = ({ store }) => (
         <Route path="/newactivity" component={ ActivityFormContainer } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/activities/:id" component={ ActivityDetailsContainer } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/activities" component={ ActivityIndexContainer } onEnter={ _redirectIfNotLoggedIn } />
+        <Route path="/users/:id" component={ ProfileContainer } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/stats" component={ ActivityStats } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/test" component={ RouteDetails } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/login" component={ SessionFormContainer } onEnter={ _redirectIfLoggedIn } />
