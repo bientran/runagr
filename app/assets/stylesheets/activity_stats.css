@@ -1,0 +1,10 @@
+tr {
+  float: left;
+}
+td {
+  display: block;
+}
+th {
+  /*float: left;*/
+  display: inline-block;
+}
