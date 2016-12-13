@@ -1,0 +1,81 @@
+.stats {
+  color: #333333;
+  border: 1px solid #ccc;
+  padding: 20px;
+  /*width: 500px;*/
+  /*margin: 0 auto;*/
+  float: left;
+  margin-top: 103px;
+  margin-left: 40px;
+  width: 360px;
+  /*width: 500px;*/
+}
+.dashboard {
+  min-width: 1070px;
+}
+.stats-title {
+  width: 100%;
+  float: left;
+  /*width: 100%;*/
+  font-size: 24px;
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
+.stats-content {
+  /*width: 100%;*/
+  float: left;
+}
+
+.stats-mileage {
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.stats-duration {
+  font-size: 14px;
+}
+
+.stats-pace {
+  font-size: 14px;
+}
+
+.stats-graph-wrapper {
+  float: left;
+  /*padding-left: 20px;*/
+}
+.stats-details {
+  /*padding-top: 20px;*/
+  /*border: 1px solid #ccc;*/
+  /*float: left;*/
+  padding-right: 20px;
+  text-align: center;
+  float: left;
+}
+.bar {
+  width: 10px;
+  padding: 5px;
+  vertical-align: bottom;
+}
+.bar > p {
+  width: 10px;
+  padding: 5px;
+  background: #333333;
+  float: left;
+}
+
+.day {
+  padding: 0 5px;
+  text-align: center;
+  vertical-align: top;
+  font-weight: bold;
+}
+
+.stats-graph {
+  margin-right: 0px;
+  border: 1px solid #ccc;
+  padding-top: 20px;
+  /*width: 150;*/
+  min-height: 150px;
+  float: left;
+}

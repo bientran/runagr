@@ -25,6 +25,7 @@ body {
   /*background: url("http://www.hdwallpaperspulse.com/wp-content/uploads/2015/01/26/running-image.jpg") no-repeat center center fixed;
   background-size: 100% 100%;*/
   min-height: 500px;
+  color: #333333
 }
 button {
   cursor: pointer;

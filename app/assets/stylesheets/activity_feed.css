@@ -1,6 +1,7 @@
 .activity-feed {
 padding: 20px;
 width: 500px;
+float: left;
 }
 .activity-feed:before {
 
