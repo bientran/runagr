@@ -49,6 +49,15 @@ class MainNav extends React.Component {
     document.getElementsByClassName('nav-profile-link')[0].style.cssText = "border-left:1px solid #ccc; border-right: 1px solid #ccc";
   }
 
+  hideExplore() {
+    document.getElementById('explore-dropDown').style.display = 'none';
+    document.getElementsByClassName('nav-explore-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
+  }
+  showExplore() {
+    document.getElementById('explore-dropDown').style.display = 'block';
+    document.getElementsByClassName('nav-explore-link')[0].style.cssText = "border-left:1px solid #ccc; border-right: 1px solid #ccc";
+  }
+
   highlight() {
     document.getElementsByClassName('nav-link')[0].style.cssText = "border-bottom: 5px solid red";
   }
@@ -78,6 +87,14 @@ class MainNav extends React.Component {
             <ul id="training-dropDown" className="training-links">
               <li className="training-link" onClick={this.hideTraining}><Link to="/newactivity">Create New Activity</Link></li>
               <li className="training-link" onClick={this.hideTraining}><Link to="/activities">My Activities</Link></li>
+            </ul>
+          </li>
+        </ul>
+        <ul className="explore-nav">
+          <li className="nav-explore-link" onMouseOver={this.showExplore} onMouseLeave={this.hideExplore}>
+            <Link className="explore" to="/users">Explore<div className="arrow-down"></div></Link>
+            <ul id="explore-dropDown" className="explore-links">
+              <li className="explore-link" onClick={this.hideExplore}><Link to="/users">View Users</Link></li>
             </ul>
           </li>
         </ul>
