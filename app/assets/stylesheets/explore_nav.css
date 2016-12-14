@@ -1,40 +1,40 @@
-.training-nav {
+.explore-nav {
   float: left;
-  /*margin-right: 20px;*/
+  margin-right: 20px;
   margin-left: 0;
 }
 
-.nav-training-link {
+.nav-explore-link {
   position: relative;
   padding-bottom: 20px;
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }
 
-.nav-training-link > a {
+.nav-explore-link > a {
   padding: 20px 20px 20px 20px;
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
   border-bottom: 1px solid #ccc;
 }
 
-.nav-training-link:hover .nav-training-link {
+.nav-explore-link:hover .nav-explore-link {
   display: block;
 }
 
-.nav-training-link:hover .nav-training-link > a {
+.nav-explore-link:hover .nav-explore-link > a {
   border-bottom: 1px solid #fff;
 }
 
-.nav-training-link:hover {
+.nav-explore-link:hover {
   color: #FC4C02;
 }
 
-.nav-training-link:hover .arrow-down {
+.nav-explore-link:hover .arrow-down {
   border-top-color: #FC4C02;
 }
 
-.training-links {
+.explore-links {
   border-top: 1px solid #ccc;
   display: none;
   position: absolute;
@@ -51,11 +51,11 @@
   overflow: hidden;
 }
 
-.training-link {
+.explore-link {
   width: 200px;
 }
 
-.training-link > a {
+.explore-link > a {
   display: inline-block;
   width: 190px;
   padding: 10px 0;
@@ -65,6 +65,6 @@
   color: #000;
 }
 
-.training-link:hover {
+.explore-link:hover {
   background: #F6F6F6;
 }

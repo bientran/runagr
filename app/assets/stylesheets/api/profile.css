@@ -1,0 +1,49 @@
+.profile {
+  /*padding: 20px;*/
+  padding-top: 20px;
+}
+.profile-details {
+  margin-right: 60px;
+  display: inline-block;
+  width: 700px;
+}
+.profile-details > h1 {
+  font-size: 36px;
+  font-weight: lighter;
+  float: left;
+  width: 200px;
+  /*margin: 0 auto;*/
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 60px;
+}
+
+.profile > h2 {
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+}
+
+.profile > h2:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 280px;
+  display: block;
+  height: 1px;
+  background: #ccc;
+}
+
+.profile-details:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 230px;
+  display: block;
+  height: 1px;
+  background: #ccc;
+}

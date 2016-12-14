@@ -1,0 +1,93 @@
+.user-index {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.user-index-title {
+  font-size: 36px;
+  font-weight: lighter;
+  padding-bottom: 20px;
+  width: 100%;
+  /*border-bottom: 1px solid #ccc;*/
+  margin-bottom: 20px;
+}
+
+.user-index {
+
+}
+
+.search-wrapper {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  width: 790px;
+  background: #F5F5F5;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.user-search {
+  font-size: 14px;
+  padding: 10px;
+  margin:10px 0 10px 10px;
+  /*width: 100%;*/
+  background: #fff;
+  border: 1px solid #ccc;
+  /*display: inline-block;*/
+}
+
+.user-index-table {
+border-collapse: collapse;
+width: 800px;
+
+}
+
+.user-index-header {
+  text-align: left;
+  background: #F6F6F6;
+  border-bottom: 1px solid #ccc;
+}
+.user-index-title:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 140px;
+  display: block;
+  height: 1px;
+  background: #ccc;
+}
+
+.user-index-header > th {
+  padding-left: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+}
+
+.user-index-row {
+  background: #FFFFFF;
+}
+
+
+.user-index-row > td {
+  border: 0;
+  margin: 0;
+  padding: 15px 20px;
+}
+
+.user-index-row > td > a {
+  color: #0280B7;
+}
+
+.user-index-row > td > a:hover {
+  text-decoration: underline;
+}
+
+
+.user-index-row:nth-of-type(2n) {
+  background: #FAFAFA;
+}
+
+.user-index-row:last-child {
+  border-bottom: 1px solid #ccc;
+}
