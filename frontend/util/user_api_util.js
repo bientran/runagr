@@ -11,3 +11,11 @@ export const fetchAllUsers = function() {
     url: `api/users/`
   });
 };
+
+export const updateUser = function(user) {
+  return $.ajax({
+    method: "PATCH",
+    url: `api/users/${14}`,
+    data: { user }
+  });
+};
