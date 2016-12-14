@@ -34,10 +34,14 @@
 
 .stats-duration {
   font-size: 14px;
+  font-weight: bold;
+
 }
 
 .stats-pace {
   font-size: 14px;
+  font-weight: bold;
+  
 }
 
 .stats-graph-wrapper {
@@ -78,4 +82,9 @@
   /*width: 150;*/
   min-height: 150px;
   float: left;
+}
+
+.stats-details > p {
+  font-size: 12px;
+  margin-bottom: 10px;
 }

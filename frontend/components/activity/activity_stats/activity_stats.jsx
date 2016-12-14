@@ -131,7 +131,13 @@ class ActivityStats extends React.Component {
     if(weeklyPace != "") {
       weeklyPace += "/mi";
     }
+    let mi = "Total Distance";
+    let du = "Time Spent";
+    let pa = "Average Pace";
     if(weeklyDuration === "0"){
+      mi = "";
+      du = "";
+      pa = "";
       weeklyDuration = "";
     }
 
@@ -141,8 +147,11 @@ class ActivityStats extends React.Component {
         <section className="stats-content">
           <section className="stats-details">
             <h2 className="stats-mileage">{weeklyMiles} mi</h2>
+            <p>{mi}</p>
             <h2 className="stats-duration">{weeklyDuration}</h2>
+            <p>{du}</p>
             <h2 className="stats-pace">{weeklyPace}</h2>
+            <p>{pa}</p>
           </section>
           <ActivityGraph dailyMiles={dailyMiles} />
         </section>

@@ -36,63 +36,70 @@ class ActivityMonth extends React.Component {
     }
 
     return (
-      <section className="month-stats">
-        <table>
-          <thead>
-            <tr>
-              <th className="weekday">M</th>
-              <th className="weekday">T</th>
-              <th className="weekday">W</th>
-              <th className="weekday">T</th>
-              <th className="weekday">F</th>
-              <th className="weekday">S</th>
-              <th className="weekday">S</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][0].toDateString())? "large-circle" : ""}`}>{weeks[0][0].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][1].toDateString())? "large-circle" : ""}`}>{weeks[0][1].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][2].toDateString())? "large-circle" : ""}`}>{weeks[0][2].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][3].toDateString())? "large-circle" : ""}`}>{weeks[0][3].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][4].toDateString())? "large-circle" : ""}`}>{weeks[0][4].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][5].toDateString())? "large-circle" : ""}`}>{weeks[0][5].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[0][6].toDateString())? "large-circle" : ""}`}>{weeks[0][6].getDate()}</div></td>
-              <td><div></div></td>
-            </tr>
-            <tr>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][0].toDateString())? "large-circle" : ""}`}>{weeks[1][0].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][1].toDateString())? "large-circle" : ""}`}>{weeks[1][1].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][2].toDateString())? "large-circle" : ""}`}>{weeks[1][2].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][3].toDateString())? "large-circle" : ""}`}>{weeks[1][3].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][4].toDateString())? "large-circle" : ""}`}>{weeks[1][4].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][5].toDateString())? "large-circle" : ""}`}>{weeks[1][5].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[1][6].toDateString())? "large-circle" : ""}`}>{weeks[1][6].getDate()}</div></td>
-              <td><div></div></td>
-            </tr>
-            <tr>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][0].toDateString())? "large-circle" : ""}`}>{weeks[2][0].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][1].toDateString())? "large-circle" : ""}`}>{weeks[2][1].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][2].toDateString())? "large-circle" : ""}`}>{weeks[2][2].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][3].toDateString())? "large-circle" : ""}`}>{weeks[2][3].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][4].toDateString())? "large-circle" : ""}`}>{weeks[2][4].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][5].toDateString())? "large-circle" : ""}`}>{weeks[2][5].getDate()}</div></td>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[2][6].toDateString())? "large-circle" : ""}`}>{weeks[2][6].getDate()}</div></td>
-              <td><div></div></td>
-            </tr>
-            <tr>
-              <td className="month-day"><div className={`circle ${days.includes(weeks[3][0].toDateString())? "large-circle" : ""}`}>{weeks[3][0].getDate()}</div></td>
-              <td className="month-day"><div className={(weeks[3][1])? `circle ${days.includes(weeks[3][1].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][1])? weeks[3][1].getDate() : ""}</div></td>
-              <td className="month-day"><div className={(weeks[3][2])?`circle ${days.includes(weeks[3][2].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][2])? weeks[3][2].getDate() : ""}</div></td>
-              <td className="month-day"><div className={(weeks[3][3])?`circle ${days.includes(weeks[3][3].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][3])? weeks[3][3].getDate() : ""}</div></td>
-              <td className="month-day"><div className={(weeks[3][4])?`circle ${days.includes(weeks[3][4].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][4])? weeks[3][4].getDate() : ""}</div></td>
-              <td className="month-day"><div className={(weeks[3][5])?`circle ${days.includes(weeks[3][5].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][5])? weeks[3][5].getDate() : ""}</div></td>
-              <td className="month-day"><div className={(weeks[3][6])?`circle ${days.includes(weeks[3][6].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][6])? weeks[3][6].getDate() : ""}</div></td>
-              <td><div></div></td>
-            </tr>
-          </tbody>
-        </table>
+      <section className="month-glace">
+        <section className="month-stats">
+          <section className="month-activities">
+            <h2>Last 4 weeks</h2>
+            <h1>{totalActivities}</h1>
+            <p>Total Activities</p>
+          </section>
+          <table>
+            <thead>
+              <tr>
+                <th className="weekday">M</th>
+                <th className="weekday">T</th>
+                <th className="weekday">W</th>
+                <th className="weekday">T</th>
+                <th className="weekday">F</th>
+                <th className="weekday">S</th>
+                <th className="weekday">S</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][0].toDateString())? "large-circle" : ""}`}>{weeks[0][0].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][1].toDateString())? "large-circle" : ""}`}>{weeks[0][1].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][2].toDateString())? "large-circle" : ""}`}>{weeks[0][2].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][3].toDateString())? "large-circle" : ""}`}>{weeks[0][3].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][4].toDateString())? "large-circle" : ""}`}>{weeks[0][4].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][5].toDateString())? "large-circle" : ""}`}>{weeks[0][5].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[0][6].toDateString())? "large-circle" : ""}`}>{weeks[0][6].getDate()}</div></td>
+                <td><div></div></td>
+              </tr>
+              <tr>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][0].toDateString())? "large-circle" : ""}`}>{weeks[1][0].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][1].toDateString())? "large-circle" : ""}`}>{weeks[1][1].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][2].toDateString())? "large-circle" : ""}`}>{weeks[1][2].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][3].toDateString())? "large-circle" : ""}`}>{weeks[1][3].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][4].toDateString())? "large-circle" : ""}`}>{weeks[1][4].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][5].toDateString())? "large-circle" : ""}`}>{weeks[1][5].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[1][6].toDateString())? "large-circle" : ""}`}>{weeks[1][6].getDate()}</div></td>
+                <td><div></div></td>
+              </tr>
+              <tr>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][0].toDateString())? "large-circle" : ""}`}>{weeks[2][0].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][1].toDateString())? "large-circle" : ""}`}>{weeks[2][1].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][2].toDateString())? "large-circle" : ""}`}>{weeks[2][2].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][3].toDateString())? "large-circle" : ""}`}>{weeks[2][3].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][4].toDateString())? "large-circle" : ""}`}>{weeks[2][4].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][5].toDateString())? "large-circle" : ""}`}>{weeks[2][5].getDate()}</div></td>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[2][6].toDateString())? "large-circle" : ""}`}>{weeks[2][6].getDate()}</div></td>
+                <td><div></div></td>
+              </tr>
+              <tr>
+                <td className="month-day"><div className={`circle ${days.includes(weeks[3][0].toDateString())? "large-circle" : ""}`}>{weeks[3][0].getDate()}</div></td>
+                <td className="month-day"><div className={(weeks[3][1])? `circle ${days.includes(weeks[3][1].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][1])? weeks[3][1].getDate() : ""}</div></td>
+                <td className="month-day"><div className={(weeks[3][2])?`circle ${days.includes(weeks[3][2].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][2])? weeks[3][2].getDate() : ""}</div></td>
+                <td className="month-day"><div className={(weeks[3][3])?`circle ${days.includes(weeks[3][3].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][3])? weeks[3][3].getDate() : ""}</div></td>
+                <td className="month-day"><div className={(weeks[3][4])?`circle ${days.includes(weeks[3][4].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][4])? weeks[3][4].getDate() : ""}</div></td>
+                <td className="month-day"><div className={(weeks[3][5])?`circle ${days.includes(weeks[3][5].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][5])? weeks[3][5].getDate() : ""}</div></td>
+                <td className="month-day"><div className={(weeks[3][6])?`circle ${days.includes(weeks[3][6].toDateString())? "large-circle" : ""}` : ""}>{(weeks[3][6])? weeks[3][6].getDate() : ""}</div></td>
+                <td><div></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       </section>
     );
   }

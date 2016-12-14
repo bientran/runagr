@@ -1,24 +1,16 @@
 import React from 'react';
+import { Link, withRouter } from 'react-router';
+import ActivityItem from '../activity/activity_feed/activity_item';
+import ActivityDate from '../activity/activity_feed/activity_date';
 import { values } from 'lodash';
-import { Link } from 'react-router';
-import ActivityItemContainer from './activity_item_container';
-import ActivityItem from './activity_item';
-import ActivityDate from './activity_date';
 
-class ActivityFeed extends React.Component {
+class ProfileFeed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 10
+      count: 5
     };
     this.loadMore = this.loadMore.bind(this);
-
-  }
-
-  componentDidMount() {
-    // this.props.fetchRouteDetails(this.props.routeParams.id);
-    this.props.fetchAllActivities(this.props.currentUser.id);
-    this.props.fetchAllRoutes(this.props.currentUser.id);
   }
 
   compare(a,b) {
@@ -58,19 +50,19 @@ class ActivityFeed extends React.Component {
     });
   }
 
-  render() {
+  render(){
     let activities = this.props.activities;
 
-    if (values(activities).length === 0){
+    if (values(activities).length === 0 || values(activities)[0].user_id != this.props.params.id){
       return (<div className="activity-feed"></div>);
     }
     let currentDate = null;
-    let feed = [];
-    // activities = values(activities).sort(this.compare).map((activity) => <ActivityItemContainer activity={activity} />);
     let localCount = 0;
+    let feed =[];
     let last = (activities.length < this.state.count) ? activities.length : this.state.count;
+    console.log(this.props);
     values(activities).sort(this.compare).slice(0,last).forEach((activity) => {
-      let route = (activity.route_id === -1) ? -1 : this.props.routes[activity.route_id];
+      let route = (activity.route_id === -1) ? -1 : this.props.routeDetails[activity.route_id];
       if(currentDate !== activity.date) {
         currentDate = activity.date;
         feed.push(<ActivityDate key={activity.date} date={activity.date} />);
@@ -78,9 +70,9 @@ class ActivityFeed extends React.Component {
       feed.push(<ActivityItem key={`activity-${activity.id}`} routeDetails={route} activity={activity} />);
       localCount++;
     });
-    return (
+
+    return(
       <section className="activity-feed">
-        <h1 className="activity-feed-title">Activity Feed</h1>
         <ul className="feed-items">
           {feed}
         </ul>
@@ -90,4 +82,4 @@ class ActivityFeed extends React.Component {
   }
 }
 
-export default ActivityFeed;
+export default withRouter(ProfileFeed);
