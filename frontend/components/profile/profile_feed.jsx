@@ -54,7 +54,7 @@ class ProfileFeed extends React.Component {
     let activities = this.props.activities;
 
     if (values(activities).length === 0 || values(activities)[0].user_id != this.props.params.id){
-      return (<div className="activity-feed"></div>);
+      return (<div className="activity-feed">No activities found.</div>);
     }
     let currentDate = null;
     let localCount = 0;

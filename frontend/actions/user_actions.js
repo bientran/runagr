@@ -18,8 +18,14 @@ export function fetchUserDetails(id) {
   };
 }
 
-export function fetchAllUsers(id) {
+export function fetchAllUsers() {
   return (dispatch) => {
-    APIUtil.fetchAllUsers(id).then(users => dispatch(receiveUsers(users)));
+    APIUtil.fetchAllUsers().then(users => dispatch(receiveUsers(users)));
   };
+}
+
+export function updateUser(user) {
+  return (dispatch) => {
+    APIUtil.updateUser(user).then(user => dispatch(receiveUser(user)));
+  }
 }

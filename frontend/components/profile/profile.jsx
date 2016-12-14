@@ -11,12 +11,24 @@ class Profile extends React.Component {
     this.editButton = this.editButton.bind(this);
   }
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.props.fetchUserDetails(this.props.params.id);
     this.props.fetchAllActivities(this.props.params.id);
     this.props.fetchAllRoutes(this.props.params.id);
   }
   componentDidUpdate() {
-    if(!('activity' in this.props.activities) && (values(this.props.activities)[0].user_id != this.props.params.id || values(this.props.routeDetails)[0].user_id != this.props.params.id)){
+    console.log(this.props);
+    console.log(values(this.props.activities));
+    //
+    // if((!('activity' in this.props.activities) && (values(this.props.activities)[0].user_id != this.props.params.id || values(this.props.routeDetails)[0].user_id != this.props.params.id))){
+    //   this.props.fetchUserDetails(this.props.params.id);
+    //   this.props.fetchAllActivities(this.props.params.id);
+    //   this.props.fetchAllRoutes(this.props.params.id);
+    // }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location !== this.props.location) {
       this.props.fetchUserDetails(this.props.params.id);
       this.props.fetchAllActivities(this.props.params.id);
       this.props.fetchAllRoutes(this.props.params.id);
@@ -43,13 +55,16 @@ class Profile extends React.Component {
     // }
     console.log(this.props);
 
+    // <ProfileFormContainer user={user} />
+    // {this.editButton()}
     return(
       <section className="profile">
+        <section className="profile-details">
+          <h1>{user.first_name} {user.last_name}</h1>
+          <ActivityMonth activities={values(activities)} />
+        </section>
+        <h2>Recent Activity</h2>
         <ProfileFeed routeDetails={this.props.routeDetails} activities={activities} />
-        {user.first_name}{user.last_name}
-        <ActivityMonth activities={values(activities)} />
-        {this.editButton()}
-        <ProfileFormContainer />
       </section>
     );
   }
