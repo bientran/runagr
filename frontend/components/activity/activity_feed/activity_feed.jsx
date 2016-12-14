@@ -60,14 +60,9 @@ class ActivityFeed extends React.Component {
 
   render() {
     let activities = this.props.activities
-    console.log("DAAAAAAAAA");
-    console.log(this.props);
-    console.log(values(activities));
-    // if('activity' in activities) {
-    //   return (<div></div>);
-    // }
+
     if (values(activities).length === 0){
-      return (<div></div>);
+      return (<div className="activity-feed"></div>);
     }
     let currentDate = null;
     let feed = [];
@@ -80,7 +75,6 @@ class ActivityFeed extends React.Component {
         currentDate = activity.date;
         feed.push(<ActivityDate key={activity.date} date={activity.date} />);
       }
-      // console.log(this.props);
       feed.push(<ActivityItem key={`activity-${activity.id}`} routeDetails={route} activity={activity} />);
       localCount++;
     });

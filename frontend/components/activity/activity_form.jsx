@@ -48,7 +48,6 @@ class ActivityForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.clearActivityErrors();
-    console.log(this.state);
     const hours = (this.state.hours.length === 0) ? 0 : this.state.hours;
     const minutes = (this.state.minutes.length === 0) ? 0 : this.state.minutes;
     const seconds = (this.state.seconds.length === 0) ? 0 : this.state.seconds;

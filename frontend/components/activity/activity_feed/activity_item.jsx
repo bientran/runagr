@@ -18,7 +18,6 @@ class ActivityItem extends React.Component {
 
   render() {
     let route = this.props.routeDetails;
-    console.log(this.props);
 
     const {activity} = this.props;
     let map;

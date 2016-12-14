@@ -21,7 +21,6 @@ class SmallMap extends React.Component {
       size = `size=200x200`;
     }
     let coords = JSON.parse(this.props.path);
-    console.log(coords[0].lat);
     let startMarker = `&markers=size:small|color:green|${coords[0].lat},${coords[0].lng}`;
     let endMarker = `&markers=size:small|color:red|${coords[coords.length-1].lat},${coords[coords.length-1].lng}`;
     let path = `&path=weight:3|color:blue|${this.encodePath()}`;

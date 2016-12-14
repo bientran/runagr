@@ -8,7 +8,6 @@ class Profile extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let user = this.props.user;
     if(!user) {
       return (<div></div>);

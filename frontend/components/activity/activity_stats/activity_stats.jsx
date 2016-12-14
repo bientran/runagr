@@ -90,7 +90,6 @@ class ActivityStats extends React.Component {
     if( miles === 0 ) {
       return "";
     }
-    console.log([miles,hours,minutes,seconds]);
     let time = hours * 3600 + minutes * 60 + seconds;
     time/=miles;
     hours = Math.floor(time / 3600);
@@ -116,7 +115,6 @@ class ActivityStats extends React.Component {
 
   render() {
     const {activities} = this.props;
-    // console.log(activities);
     let weeklyActivities = activities.filter((activity) => {
       // const date = new Date(Date.parse(activity.date));
       let d = activity.date.split("-");
@@ -130,7 +128,6 @@ class ActivityStats extends React.Component {
     const duration = this.getWeeklyDuration(weeklyActivities);
     let weeklyDuration = this.formatDuration(...duration);
     let weeklyPace = this.getWeeklyPace(weeklyMiles,...duration);
-    console.log(weeklyPace);
     if(weeklyPace != "") {
       weeklyPace += "/mi";
     }
