@@ -64,6 +64,15 @@
   /*float: left;*/
   border-bottom: 1px solid #ccc;
 }
+
+.route-record {
+  margin-left: 740px;
+  /*width: 200px;*/
+  padding: 20px;
+  /*float: left;*/
+  border-bottom: 1px solid #ccc;
+}
+
 .route-dist {
 
   margin-left: 740px;

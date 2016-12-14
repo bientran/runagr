@@ -52,7 +52,44 @@ class RouteDraw extends React.Component {
   //   zoomToObject(poly,this.map)
 
   }
-
+  getFastest(activities) {
+    let fastest = null;
+    let hours,minutes,seconds = 0;
+    // let first_name = "";
+    // let last_name = "";
+    console.log(activities);
+    activities.forEach((activity) => {
+      let time = activity.hours * 3600 + activity.minutes * 60 + activity.seconds;
+      if (fastest === null || time < fastest){
+        fastest = time;
+        hours = activity.hours;
+        minutes = activity.minutes;
+        seconds = activity.seconds;
+        // first_name = activity.user.first_name;
+        // last_name = activity.user.last_name;
+      }
+    });
+    if(hours === 0){
+      hours = "";
+    }else{
+      hours = hours + "h";
+    }
+    if(minutes === 0){
+      minutes = "";
+    }else{
+      minutes = minutes + "m";
+    }
+    if(seconds === 0){
+      seconds = "";
+    }else{
+      seconds = seconds + "s";
+    }
+    if (fastest === null) {
+      return <div></div>;
+    } else {
+      return (<h2 className="route-record">Fastest Time: {hours} {minutes} {seconds}</h2>);
+    }
+  }
 
 
   render() {
@@ -67,6 +104,7 @@ class RouteDraw extends React.Component {
             <h2 className="route-author">By: {this.props.route.author.first_name} {this.props.route.author.last_name}</h2>
             <h2 className="route-dist">Distance: {this.props.route.distance} mi</h2>
             <h2 className="route-description">Description: {this.props.route.description}</h2>
+            {this.getFastest(this.props.route.activities)}
           </section>
         </section>
       </section>
