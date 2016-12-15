@@ -59,7 +59,7 @@ class ActivityIndex extends React.Component {
               <th>Date</th>
               <th>Title</th>
               <th>Duration</th>
-              <th>Pace ({"min/mi"})</th>
+              <th>Pace ({"/mi"})</th>
               <th>Distance (miles)</th>
             </tr>
           </thead>

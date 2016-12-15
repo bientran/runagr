@@ -172,6 +172,10 @@ input {
   margin-right: 20px;
 }
 
+.activity-cancel:hover {
+  background: #F0F0F0;
+}
+
 .activity-submit {
   float: left;
   background: #FC4C02;
