@@ -13,8 +13,8 @@
 
 .nav-training-link > a {
   padding: 20px 20px 20px 20px;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
   border-bottom: 1px solid #ccc;
 }
 
