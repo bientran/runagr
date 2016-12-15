@@ -100,7 +100,7 @@ class MainNav extends React.Component {
         </ul>
         <ul className="profile-nav">
           <li className="nav-profile-link" onMouseOver={this.showProfile} onMouseLeave={this.hideProfile}>
-            <Link className="profile" to={`/users/${this.props.currentUser.id}`}>{this.props.currentUser.first_name} {this.props.currentUser.last_name}<div className="arrow-down"></div></Link>
+            <Link className="profile" to={`/users/${this.props.currentUser.id}`}><img className="nav-profile-picture" src={this.props.currentUser.picture_url}></img></Link>
             <ul id="profile-dropDown" className="profile-links">
               <li className="profile-link" onClick={this.hideProfile}><Link to={`/users/${this.props.currentUser.id}`}>My Profile</Link></li>
               <li className="profile-link" onClick={this.hideProfile}>{this.logoutLink(this.props.currentUser, this.props.logout, this.props.router, this.props.clearUser)}</li>

@@ -54,15 +54,23 @@ class Profile extends React.Component {
     //   return (<div></div>);
     // }
     console.log(this.props);
-
+    let name = `${user.first_name} ${user.last_name}`;
+    let profileName;
+    if(name.length > 30) {
+      profileName = <h1 id="too-big">{user.first_name} {user.last_name}</h1>;
+    } else {
+      profileName = <h1>{user.first_name} {user.last_name}</h1>;
+    }
     // <ProfileFormContainer user={user} />
     // {this.editButton()}
     let form = (this.props.currentUser.id === this.props.user.id) ? <ProfileFormContainer user={this.props.user} /> : <div></div>;
-    // <img src={user.picture}></img>
     return(
       <section className="profile">
         <section className="profile-details">
-          <h1>{user.first_name} {user.last_name}</h1>
+          <section className="profile-name-picture">
+            {profileName}
+            <img className="profile-picture" src={user.picture_url}></img>
+          </section>
           <ActivityMonth activities={values(activities)} />
         </section>
         <h2>Recent Activity</h2>

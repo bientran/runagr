@@ -8,14 +8,29 @@
   width: 700px;
 }
 .profile-details > h1 {
+
   font-size: 36px;
   font-weight: lighter;
-  float: left;
-  width: 200px;
+  /*float: left;*/
+  /*width: 200px;*/
   /*margin: 0 auto;*/
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 60px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-name-picture > h1 {
+  font-size: 24px;
+  font-weight: lighter;
+  text-align: center;
+  margin-left: 10px;
+
+}
+
+#too-big {
+  font-size: 18px;
 }
 
 .profile > h2 {
@@ -46,4 +61,32 @@
   display: block;
   height: 1px;
   background: #ccc;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  /*float: left;*/
+  display: block;
+  /*margin-left: 20px;*/
+  /*margin: 0 auto;*/
+  margin: 0 auto;
+}
+
+.profile-name-picture {
+  float: left;
+  width: 50%;
+  /*display: block;*/
+  /*width: 100%;*/
+  /*margin: 0 auto;*/
+  margin-left: 20px;
+  margin-right: 60px;
+
+}
+
+.nav-profile-picture {
+  height: 40px;
+  width: 40px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
 }

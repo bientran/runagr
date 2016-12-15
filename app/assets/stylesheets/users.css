@@ -72,7 +72,12 @@ width: 800px;
 .user-index-row > td {
   border: 0;
   margin: 0;
-  padding: 15px 20px;
+  padding: 5px 20px;
+}
+
+.user-row-picture {
+  width: 40px;
+  height: 40px;
 }
 
 .user-index-row > td > a {

@@ -21,6 +21,8 @@ class User < ApplicationRecord
   validates :password_digest, :first_name, :last_name, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
+  validates :first_name, length: { maximum: 20 }
+  validates :last_name, length: { maximum: 20 }
 
   has_many :routes
   has_many :activities
