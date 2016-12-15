@@ -57,6 +57,8 @@ class Profile extends React.Component {
 
     // <ProfileFormContainer user={user} />
     // {this.editButton()}
+    let form = (this.props.currentUser.id === this.props.user.id) ? <ProfileFormContainer user={this.props.user} /> : <div></div>;
+    // <img src={user.picture}></img>
     return(
       <section className="profile">
         <section className="profile-details">
@@ -65,6 +67,7 @@ class Profile extends React.Component {
         </section>
         <h2>Recent Activity</h2>
         <ProfileFeed routeDetails={this.props.routeDetails} activities={activities} />
+        {form}
       </section>
     );
   }

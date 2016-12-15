@@ -29,6 +29,9 @@ class User < ApplicationRecord
   # validates_attachment :picture, presence: true
   # do_not_validate_attachment_file_type :picture
 
+  has_attached_file :picture, default_url: "missing.png"
+  validates_attachment_content_type :picture, content_type: /\Aimage\/.*\Z/
+
   after_initialize :ensure_session_token
   attr_reader :password
 

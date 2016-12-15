@@ -24,8 +24,8 @@ export function fetchAllUsers() {
   };
 }
 
-export function updateUser(user) {
+export function updateUser(user, id) {
   return (dispatch) => {
-    APIUtil.updateUser(user).then(user => dispatch(receiveUser(user)));
+    APIUtil.updateUser(user, id).then(user => dispatch(receiveUser(user)));
   }
 }

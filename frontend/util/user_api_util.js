@@ -12,10 +12,13 @@ export const fetchAllUsers = function() {
   });
 };
 
-export const updateUser = function(user) {
+export const updateUser = function(formData, id) {
   return $.ajax({
     method: "PATCH",
-    url: `api/users/${14}`,
-    data: { user }
+    url: `api/users/${id}`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
   });
 };
