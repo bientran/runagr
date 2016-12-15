@@ -71,7 +71,7 @@ class ProfileForm extends React.Component {
         <button className="edit-profile" onClick={this.renderForm}>Edit Profile</button>
       <div onClick={this.hideForm} id="overlay" className=""></div>
       <section className="profile-form-wrapper">
-        <form id="profile-form" className="profile-form" onSubmit={this.handleSubmit} enctype="multipart/form-data">
+        <form id="profile-form" className="profile-form" onSubmit={this.handleSubmit} encType="multipart/form-data">
           <section className="profile-form-fieldset">
             <label><p>First Name</p><input className="profile-name" onChange={this.update("first_name")} type="text"></input></label>
             <label><p>Last Name</p><input className="profile-name" onChange={this.update("last_name")} type="text"></input></label>
