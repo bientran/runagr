@@ -58,6 +58,7 @@ class UserIndex extends React.Component {
         <table className="user-index-table">
           <thead>
             <tr className="user-index-header">
+              <th></th>
               <th>Name</th>
             </tr>
           </thead>
