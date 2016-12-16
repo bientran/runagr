@@ -12,6 +12,7 @@
 }
 .dashboard {
   min-width: 1070px;
+  max-width: 1070px;
 }
 .stats-title {
   width: 100%;
