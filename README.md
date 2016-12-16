@@ -46,7 +46,7 @@ The React components for routes breaks down as follows: `RouteIndex` renders the
 
 Route creation is implemented using the Google Maps api. I used google.maps.Polylines that snap to the road using the google.maps.DirectionsService. I store the coordinates created by these Polylines as JSON.
 
-![image of route index](wireframes/route-index.png)
+![image of route index](docs/wireframes/route-index.png)
 
 ### Activities
 
@@ -56,20 +56,20 @@ Activity creation is handled by the `ActivityForm`. This container renders a for
 
 The activities for the current user are held in an index page. This index is handled by the `ActivityIndex` component. This delegates out the details of each run to an `ActivityRow` component which creates rows for the activity table.
 
-![image of activity index](wireframes/activity-index.png)
+![image of activity index](docs/wireframes/activity-index.png)
 
 
 ### Activity Feed
 
 The Activity Feed shows the activities for the current user and all of the users that the current user follows. The main `ActivityFeed` component uses the `ActivityDate` component to create a row for just the date and the `ActivityItem` component to give a short form version of the activities details.
 
-![image of activity feed](wireframes/activity-feed.png)
+![image of activity feed](docs/wireframes/activity-feed.png)
 
 ### Activity Stats
 
 The main Activity Stats are housed in the `ActivityStats` component. This renders the weekly details of the current user (mileage, total time spent, average pace) and it uses `ActivityGraph` to create a bar graph of the miles for each day of the current week.
 
-![image of activity stats](wireframes/activity-stats.png)
+![image of activity stats](docs/wireframes/activity-stats.png)
 
 ### Profiles
 
@@ -77,12 +77,12 @@ User profiles are contained in the `Profile` component. It houses a hidden `Prof
 
 The Activity Month is shown in the each users profile using the `ActivityMonth` component. This shows a small calendar for the last four weeks which has circles on the dates that the user was active on. It also calculates how many activities the user has completed during the same time frame.
 
-![image of activity month](wireframes/activity-month.png)
+![image of activity month](docs/wireframes/activity-month.png)
 
 
 The Profile Feed is similar to the Activity Feed except for the only activities shown are those of the profile's user. This component reuses the `ActivityDate` and `ActivityItem` components from the `ActivityFeed`.
 
-![image of activity feed](wireframes/activity-feed.png)
+![image of activity feed](docs/wireframes/activity-feed.png)
 
 ### Follows
 
@@ -90,7 +90,7 @@ Follows are stored in the `follow` table which is used to join a `user_id` and a
 
 The main dashboard has a `FollowIndex` showing all of the users that you follow.
 
-![image of follow index](wireframes/follow-index.png)
+![image of follow index](docs/wireframes/follow-index.png)
 
 
 ## Future for the Project
