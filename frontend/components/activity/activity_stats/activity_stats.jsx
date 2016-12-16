@@ -53,7 +53,7 @@ class ActivityStats extends React.Component {
       hours += (Math.floor(minutes /60));
       minutes = minutes % 60;
     }
-    if(hours > 1){
+    if(hours >= 1){
       hours = `${hours}h `;
     } else {
       hours = "";
