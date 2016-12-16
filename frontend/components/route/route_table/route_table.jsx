@@ -43,12 +43,10 @@ class UserIndex extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     let users = this.props.users
     if('errors' in users) {
       return (<div></div>);
     }
-    console.log(this.props.users);
     users = this.search(values(users),this.state.term);
     let userRows = users.sort(this.compare).map((user,i) => <UserRow key={`user-${i}`} user={user} />);
     return (

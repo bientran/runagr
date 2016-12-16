@@ -84,7 +84,6 @@ class ActivityFeed extends React.Component {
       feed.push(<ActivityItem key={`activity-${activity.id}`} routeDetails={route} activity={activity} />);
       localCount++;
     });
-    console.log(this.props.currentUser);
     return (
       <section className="activity-feed">
         <h1 className="activity-feed-title">Activity Feed</h1>

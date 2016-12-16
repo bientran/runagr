@@ -57,7 +57,6 @@ class RouteDraw extends React.Component {
     let hours,minutes,seconds = 0;
     // let first_name = "";
     // let last_name = "";
-    console.log(activities);
     activities.forEach((activity) => {
       let time = activity.hours * 3600 + activity.minutes * 60 + activity.seconds;
       if (fastest === null || time < fastest){

@@ -20,8 +20,6 @@ class ActivityStats extends React.Component {
   }
 
   getWeeklyMiles(activities) {
-    console.log("OI");
-    console.log(this.props);
     let miles = 0;
     activities.forEach((activity) => {
       if (activity.user_id !== this.props.currentUser.id){

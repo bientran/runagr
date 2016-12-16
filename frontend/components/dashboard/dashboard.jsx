@@ -24,7 +24,6 @@ class Dashboard extends React.Component {
     if('activity' in activities || !activities) {
       return (<div></div>);
     }
-    console.log("HEY THERE");
     // <ActivityMonth activities={values(activities)} />
     return(
       <section className="dashboard">

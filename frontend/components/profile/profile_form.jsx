@@ -63,7 +63,6 @@ class ProfileForm extends React.Component {
 
 
   render() {
-    console.log(this.state);
     // Location<input onChange={this.update("location")} value={this.state.location} type="text"></input>
 
     return(

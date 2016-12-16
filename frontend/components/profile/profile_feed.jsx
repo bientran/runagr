@@ -60,7 +60,6 @@ class ProfileFeed extends React.Component {
     let localCount = 0;
     let feed =[];
     let last = (activities.length < this.state.count) ? activities.length : this.state.count;
-    console.log(this.props);
     values(activities).sort(this.compare).slice(0,last).forEach((activity) => {
       let route = (activity.route_id === -1) ? -1 : this.props.routeDetails[activity.route_id];
       if(currentDate !== activity.date) {

@@ -19,8 +19,6 @@ class Profile extends React.Component {
     this.props.fetchAllRoutes(this.props.params.id);
   }
   componentDidUpdate() {
-    console.log(this.props);
-    console.log(values(this.props.activities));
     //
     // if((!('activity' in this.props.activities) && (values(this.props.activities)[0].user_id != this.props.params.id || values(this.props.routeDetails)[0].user_id != this.props.params.id))){
     //   this.props.fetchUserDetails(this.props.params.id);
@@ -39,8 +37,6 @@ class Profile extends React.Component {
   }
 
   editButton() {
-    console.log("DFSFDSFS");
-    console.log(this.props);
     if(this.props.currentUser.id == this.props.params.id){
       return <button>HEY THERE</button>;
     }else{
@@ -51,10 +47,10 @@ class Profile extends React.Component {
   follow(user,follow){
     return () => {
       const promise = this.props.followUser(user,follow).then(() => {
-        debugger
+
         this.props.fetchCurrentUser(this.props.currentUser.id);
       });
-      debugger
+
       // this.props.fetchCurrentUser(this.props.currentUser.id);
       // this.props.router.push("/dashboard");
     }
@@ -62,8 +58,6 @@ class Profile extends React.Component {
 
   followButton(){
     let follows = [this.props.currentUser.id];
-    console.log("YOYOOY");
-    console.log(this.props);
     let followed = false;
     values(this.props.currentUser.followers).forEach((follow) => {
       if (this.props.user.id === follow.id){
@@ -89,7 +83,6 @@ class Profile extends React.Component {
     // if('activity' in activities || !activities) {
     //   return (<div></div>);
     // }
-    console.log(this.props);
     let name = `${user.first_name} ${user.last_name}`;
     let profileName;
     if(name.length > 30) {
