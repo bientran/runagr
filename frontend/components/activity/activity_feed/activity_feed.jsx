@@ -67,9 +67,9 @@ class ActivityFeed extends React.Component {
   render() {
 
     let activities = this.props.activities;
-    if (values(activities).length === 0){
-      return (<div className="activity-feed"></div>);
-    }
+    // if (values(activities).length === 0){
+    //   // return (<div className="activity-feed"></div>);
+    // }
     let currentDate = null;
     let feed = [];
     // activities = values(activities).sort(this.compare).map((activity) => <ActivityItemContainer activity={activity} />);
