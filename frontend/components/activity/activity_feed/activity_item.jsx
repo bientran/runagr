@@ -8,7 +8,7 @@ class ActivityItem extends React.Component {
   formatTime(activity) {
     const t = parseInt(activity.time.slice(0,2));
     let ampm = (t >= 12) ? "PM" : "AM";
-    let time = (t >= 12) ? `${parseInt(activity.time.slice(0,2))-12}${activity.time.slice(2)}` : activity.time;
+    let time = (t > 12) ? `${parseInt(activity.time.slice(0,2))-12}${activity.time.slice(2)}` : activity.time;
     time = (t === 0) ? `12${activity.time.slice(2)}` : time;
     if (time[0] === '0'){
       time = time.slice(1);
