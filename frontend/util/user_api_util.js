@@ -22,3 +22,11 @@ export const updateUser = function(formData, id) {
     data: formData
   });
 };
+
+export const followUser = function(user, follow) {
+  return $.ajax({
+    method: "POST",
+    url: `api/follows/`,
+    data: {follow:{user_id: user.id, follow_id: follow.id}}
+  });
+};

@@ -11,6 +11,14 @@
   border-bottom: 0;
 }
 
+.activity-header > p > a {
+  color: #0280B7;
+}
+
+.activity-header > p > a:hover {
+  text-decoration: underline;
+}
+
 .activity-show-content {
   width: 310px;
   padding: 20px;

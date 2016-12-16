@@ -16,9 +16,15 @@ class ActivityFeed extends React.Component {
   }
 
   componentDidMount() {
+    let follows = [this.props.currentUser.id];
+    values(this.props.currentUser.followers).forEach((follow) => follows.push(follow.id));
     // this.props.fetchRouteDetails(this.props.routeParams.id);
-    this.props.fetchAllActivities(this.props.currentUser.id);
-    this.props.fetchAllRoutes(this.props.currentUser.id);
+    this.props.fetchAllActivities(follows);
+    this.props.fetchAllRoutes(follows);
+  }
+
+  componentWillMount() {
+    this.props.fetchCurrentUser(this.props.currentUser.id);
   }
 
   compare(a,b) {
@@ -59,8 +65,8 @@ class ActivityFeed extends React.Component {
   }
 
   render() {
-    let activities = this.props.activities;
 
+    let activities = this.props.activities;
     if (values(activities).length === 0){
       return (<div className="activity-feed"></div>);
     }
@@ -78,6 +84,7 @@ class ActivityFeed extends React.Component {
       feed.push(<ActivityItem key={`activity-${activity.id}`} routeDetails={route} activity={activity} />);
       localCount++;
     });
+    console.log(this.props.currentUser);
     return (
       <section className="activity-feed">
         <h1 className="activity-feed-title">Activity Feed</h1>

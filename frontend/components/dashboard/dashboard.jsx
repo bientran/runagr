@@ -5,12 +5,18 @@ import MainNav from '../nav/main_nav';
 import ActivityFeedContainer from '../activity/activity_feed/activity_feed_container';
 import ActivityStats from '../activity/activity_stats/activity_stats';
 import { values } from 'lodash';
+import FollowIndex from '../follow/follow_index';
 // import ActivityMonth from '../activity/activity_stats/activity_month';
 
 class Dashboard extends React.Component {
 
   componentWillMount() {
+    this.props.fetchCurrentUser(this.props.currentUser.id);
     this.props.fetchAllActivities(this.props.currentUser.id);
+  }
+
+  componentDidMount() {
+
   }
 
   render() {
@@ -22,8 +28,9 @@ class Dashboard extends React.Component {
     // <ActivityMonth activities={values(activities)} />
     return(
       <section className="dashboard">
-        <ActivityFeedContainer />
-        <ActivityStats activities={values(activities)} />
+        <ActivityFeedContainer currentUser={this.props.currentUser}/>
+        <ActivityStats currentUser={this.props.currentUser} activities={values(activities)} />
+        <FollowIndex currentUser={this.props.currentUser} />
       </section>
     );
   }

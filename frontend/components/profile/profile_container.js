@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserDetails } from '../../actions/user_actions';
+import { fetchUserDetails, followUser, fetchCurrentUser } from '../../actions/user_actions';
 import { fetchAllActivities } from '../../actions/activity_actions';
 import { fetchAllRoutes } from '../../actions/route_actions';
 
@@ -15,7 +15,9 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchUserDetails: (id) => dispatch(fetchUserDetails(id)),
   fetchAllActivities: (id) => dispatch(fetchAllActivities(id)),
-  fetchAllRoutes: (id) => dispatch(fetchAllRoutes(id))
+  fetchAllRoutes: (id) => dispatch(fetchAllRoutes(id)),
+  followUser: (user,follow) => dispatch(followUser(user,follow)),
+  fetchCurrentUser: (id) => dispatch(fetchCurrentUser(id))
 });
 
 export default connect(

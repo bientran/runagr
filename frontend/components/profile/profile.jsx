@@ -9,11 +9,13 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.editButton = this.editButton.bind(this);
+    this.follow = this.follow.bind(this);
+    this.followButton = this.followButton.bind(this);
   }
   componentDidMount() {
     window.scrollTo(0, 0);
     this.props.fetchUserDetails(this.props.params.id);
-    this.props.fetchAllActivities(this.props.params.id);
+    this.props.fetchAllActivities([this.props.params.id]);
     this.props.fetchAllRoutes(this.props.params.id);
   }
   componentDidUpdate() {
@@ -28,6 +30,7 @@ class Profile extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    // this.props.fetchCurrentUser(this.props.currentUser.id);
     if (nextProps.location !== this.props.location) {
       this.props.fetchUserDetails(this.props.params.id);
       this.props.fetchAllActivities(this.props.params.id);
@@ -42,6 +45,39 @@ class Profile extends React.Component {
       return <button>HEY THERE</button>;
     }else{
       return <div></div>;
+    }
+  }
+
+  follow(user,follow){
+    return () => {
+      const promise = this.props.followUser(user,follow).then(() => {
+        debugger
+        this.props.fetchCurrentUser(this.props.currentUser.id);
+      });
+      debugger
+      // this.props.fetchCurrentUser(this.props.currentUser.id);
+      // this.props.router.push("/dashboard");
+    }
+  }
+
+  followButton(){
+    let follows = [this.props.currentUser.id];
+    console.log("YOYOOY");
+    console.log(this.props);
+    let followed = false;
+    values(this.props.currentUser.followers).forEach((follow) => {
+      if (this.props.user.id === follow.id){
+        followed = true
+      }
+      follows.push(follow.id);
+    });
+    if(this.props.currentUser.id === this.props.user.id){
+      return <div></div>
+    }
+    if(followed) {
+      return <div className="follow-button followed">Following</div>;
+    } else {
+    return <button className="follow-button not-followed" onClick={this.follow(this.props.currentUser,this.props.user)}>Follow</button>;
     }
   }
 
@@ -74,6 +110,7 @@ class Profile extends React.Component {
           <ActivityMonth activities={values(activities)} />
         </section>
         <h2>Recent Activity</h2>
+        {this.followButton()}
         <ProfileFeed routeDetails={this.props.routeDetails} activities={activities} />
         {form}
       </section>

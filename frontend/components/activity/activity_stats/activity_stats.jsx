@@ -7,6 +7,9 @@ class ActivityStats extends React.Component {
   constructor(props) {
     super(props);
     this.getMonday = this.getMonday.bind(this);
+    this.getWeeklyMiles = this.getWeeklyMiles.bind(this);
+    this.getWeeklyDuration = this.getWeeklyDuration.bind(this);
+    this.getDailyMiles = this.getDailyMiles.bind(this);
   }
 
   getMonday(d) {
@@ -17,8 +20,13 @@ class ActivityStats extends React.Component {
   }
 
   getWeeklyMiles(activities) {
+    console.log("OI");
+    console.log(this.props);
     let miles = 0;
     activities.forEach((activity) => {
+      if (activity.user_id !== this.props.currentUser.id){
+        return;
+      }
       miles += parseFloat(activity.distance);
     });
     return Math.round(miles*100)/100;
@@ -28,6 +36,9 @@ class ActivityStats extends React.Component {
     let minutes = 0;
     let seconds = 0;
     activities.forEach((activity) => {
+      if (activity.user_id !== this.props.currentUser.id){
+        return;
+      }
       hours += parseInt(activity.hours);
       minutes += parseInt(activity.minutes);
       seconds += parseInt(activity.seconds);
@@ -103,6 +114,9 @@ class ActivityStats extends React.Component {
   getDailyMiles(activities) {
     let days = [0,0,0,0,0,0,0];
     activities.forEach((activity) => {
+      if (activity.user_id !== this.props.currentUser.id){
+        return;
+      }
       let d = activity.date.split("-");
       let x = new Date(d[0],d[1]-1,d[2]);
       // const date = ((new Date(activity.date).getDay()-1) % 7);

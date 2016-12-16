@@ -2,6 +2,7 @@
 padding: 20px;
 width: 500px;
 float: left;
+min-height: 500px;
 }
 .activity-feed:before {
 
@@ -220,4 +221,12 @@ margin-top: 20px;
 
 .load-more > button:hover {
   background: #F0F0F0;
+}
+
+.feed-item-author > a{
+  color: #0280B7;
+}
+
+.feed-item-author > a:hover {
+  text-decoration: underline;
 }

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { logout, clearUser } from '../../actions/session_actions';
 import { fetchAllActivities } from '../../actions/activity_actions';
+import { fetchCurrentUser } from '../../actions/user_actions';
 import Dashboard from './dashboard';
 
 const mapStateToProps = (state) => ({
@@ -11,7 +12,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   logout: () => dispatch(logout()),
   clearUser: () => dispatch(clearUser()),
-  fetchAllActivities: () => dispatch(fetchAllActivities())
+  fetchAllActivities: (id) => dispatch(fetchAllActivities(id)),
+  fetchCurrentUser: (id) => dispatch(fetchCurrentUser(id))
 });
 
 export default connect(

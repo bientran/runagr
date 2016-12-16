@@ -1,0 +1,52 @@
+.follow-index {
+  float: left;
+  width: 240px;
+  margin-left: 40px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+.follow-title {
+  padding: 10px 0;
+  background: #F0F0F0;
+  text-align: center;
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.followed-users {
+
+}
+
+.followed-user > a {
+
+}
+
+.followed-picture {
+  float: left;
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+}
+
+.followed-user > a {
+  /*margin-left: 10px;
+  margin-top: 5px;*/
+  padding: 15px;
+  float: left;
+  font-size: 14px;
+  color: #0280B7;
+}
+
+.followed-user > a:hover {
+  text-decoration: underline;
+}
+
+.followed-user {
+  width: 100%;
+  float: left;
+}
+.followed-user:nth-of-type(2n) {
+  background: #F6F6F6;
+}

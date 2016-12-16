@@ -32,7 +32,7 @@ class ActivityItem extends React.Component {
         <section className="feed-item-details">
           <div className="item-circle"></div>
           <div className="feed-item-title"><Link to={`/activities/${activity.id}`}>{activity.title}</Link></div>
-          <div className="feed-item-author">{activity.author.first_name} {activity.author.last_name}</div>
+          <div className="feed-item-author"><Link to={`/users/${activity.author.id}`}>{activity.author.first_name} {activity.author.last_name}</Link></div>
           <ul className="feed-item-stats">
             <li className="feed-item-time">{this.formatTime(activity)}</li>
             <li className="feed-item-distance">{activity.distance} miles</li>

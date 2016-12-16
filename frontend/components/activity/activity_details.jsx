@@ -3,6 +3,7 @@ import SmallMap from '../route/small_map';
 import ActivityMap from './activity_map';
 import ActivityMapContainer from './activity_map_container';
 import ActivityPace from './activity_pace';
+import { Link } from 'react-router';
 
 class ActivityDetails extends React.Component {
 
@@ -42,7 +43,7 @@ class ActivityDetails extends React.Component {
     return(
       <section className="activity-show group">
         <section className="activity-header">
-          <p>{activity.activity_type} - {activity.author.first_name} {activity.author.last_name}</p>
+          <p>{activity.activity_type} - <Link to={`/users/${activity.author.id}`}>{activity.author.first_name} {activity.author.last_name}</Link></p>
         </section>
         <section className="activity-block group">
           <section className="activity-show-content">

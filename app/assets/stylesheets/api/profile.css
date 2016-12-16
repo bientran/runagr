@@ -36,7 +36,7 @@
 
 .profile > h2 {
   margin-left: 20px;
-  margin-top: 20px;
+  margin-top: 30px;
   font-size: 24px;
   font-weight: lighter;
   margin-bottom: 20px;
@@ -90,4 +90,29 @@
   width: 40px;
   margin-top: 10px;
   border: 1px solid #ccc;
+}
+
+.followed {
+  background: #F6F6F6;
+}
+
+.follow-button {
+  border: 1px solid #ccc;
+  padding: 10px 10px;
+  width: 100px;
+  /*float: left;*/
+  text-align: center;
+  position: absolute;
+  top: 235px;
+  left: 270px;
+}
+
+
+.not-followed {
+  color: #fff;
+  background: #FC4C02;
+}
+
+.not-followed:hover {
+  background-color: #DC4C02;
 }
