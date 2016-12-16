@@ -77,12 +77,9 @@ User profiles are contained in the `Profile` component. It houses a hidden `Prof
 
 The Activity Month is shown in the each users profile using the `ActivityMonth` component. This shows a small calendar for the last four weeks which has circles on the dates that the user was active on. It also calculates how many activities the user has completed during the same time frame.
 
-![image of profile](docs/wireframes/profile-page.png)
-
-
 The Profile Feed is similar to the Activity Feed except for the only activities shown are those of the profile's user. This component reuses the `ActivityDate` and `ActivityItem` components from the `ActivityFeed`.
 
-![image of activity feed](docs/wireframes/activity-feed.png)
+![image of profile](docs/wireframes/profile-page.png)
 
 ### Follows
 
@@ -95,7 +92,7 @@ The main dashboard has a `FollowIndex` showing all of the users that you follow.
 
 ## Future for the Project
 
-Below are some of the things in the near future I hope to continue working on and implementing.
+Below are some of the things I hope to continue working on and implementing in the near future .
 
 ### Comments
 
