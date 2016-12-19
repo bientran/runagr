@@ -1,3 +1,19 @@
 .footer-logo {
   padding: 20px;
 }
+
+footer > h2 {
+  padding: 20px;
+  float: left;
+  color: #B1B1B1;
+}
+
+footer > a {
+  padding: 20px;
+  float: left;
+  color: #B1B1B1;
+}
+
+footer > a:hover {
+  text-decoration: underline;
+}

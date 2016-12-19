@@ -14,7 +14,7 @@ class MainFooter extends React.Component {
       return <div></div>;
     return(
       <footer>
-        <h1 className="footer-logo"></h1>
+        <h1 className="footer-logo"></h1><h2>Created by Joe Molinari</h2><a href="https://github.com/jmolinari">Github</a>
       </footer>
     );
 
