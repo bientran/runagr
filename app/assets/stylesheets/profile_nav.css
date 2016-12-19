@@ -6,8 +6,9 @@
 .nav-profile-link {
   position: relative;
   padding-bottom: 3px;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .nav-profile-link > a {

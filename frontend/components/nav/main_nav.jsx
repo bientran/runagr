@@ -24,7 +24,7 @@ class MainNav extends React.Component {
 
   hideDash() {
     document.getElementById('dropDown').style.display = 'none';
-    document.getElementsByClassName('nav-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
+    document.getElementsByClassName('nav-link')[0].style.cssText = "border-left:1px solid transparent; border-right: 1px solid transparent";
   }
   showDash() {
     document.getElementById('dropDown').style.display = 'block';
@@ -33,7 +33,7 @@ class MainNav extends React.Component {
 
   hideTraining() {
     document.getElementById('training-dropDown').style.display = 'none';
-    document.getElementsByClassName('nav-training-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
+    document.getElementsByClassName('nav-training-link')[0].style.cssText = "border-left:1px solid transparent; border-right: 1px solid transparent";
   }
   showTraining() {
     document.getElementById('training-dropDown').style.display = 'block';
@@ -42,7 +42,7 @@ class MainNav extends React.Component {
 
   hideProfile() {
     document.getElementById('profile-dropDown').style.display = 'none';
-    document.getElementsByClassName('nav-profile-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
+    document.getElementsByClassName('nav-profile-link')[0].style.cssText = "border-left:1px solid transparent; border-right: 1px solid transparent";
   }
   showProfile() {
     document.getElementById('profile-dropDown').style.display = 'block';
@@ -51,7 +51,7 @@ class MainNav extends React.Component {
 
   hideExplore() {
     document.getElementById('explore-dropDown').style.display = 'none';
-    document.getElementsByClassName('nav-explore-link')[0].style.cssText = "border-left:1px solid #fff; border-right: 1px solid #fff";
+    document.getElementsByClassName('nav-explore-link')[0].style.cssText = "border-left:1px solid transparent; border-right: 1px solid transparent";
   }
   showExplore() {
     document.getElementById('explore-dropDown').style.display = 'block';
