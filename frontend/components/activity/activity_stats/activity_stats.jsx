@@ -117,8 +117,6 @@ class ActivityStats extends React.Component {
       }
       let d = activity.date.split("-");
       let x = new Date(d[0],d[1]-1,d[2]);
-      // const date = ((new Date(activity.date).getDay()-1) % 7);
-      // const date = ((x.getDay()-1)% 7);
       const date = x.getDay();
       days[date] += (parseFloat(activity.distance));
     });
@@ -128,7 +126,6 @@ class ActivityStats extends React.Component {
   render() {
     const {activities} = this.props;
     let weeklyActivities = activities.filter((activity) => {
-      // const date = new Date(Date.parse(activity.date));
       let d = activity.date.split("-");
       let date = new Date(d[0],d[1]-1,d[2]);
       let nextMonday = new Date();

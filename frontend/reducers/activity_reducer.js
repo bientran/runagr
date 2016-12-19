@@ -11,9 +11,6 @@ const ActivityReducer = (state = _nullActivity, action) => {
   switch(action.type) {
     case RECEIVE_ACTIVITY:
       const activity = action.activity;
-      // return merge({}, {
-      //   route
-      // });
       return {activity};
     case RECEIVE_ACTIVITY_ERRORS:
       const errors = action.errors;
@@ -23,9 +20,7 @@ const ActivityReducer = (state = _nullActivity, action) => {
     case RECEIVE_ACTIVITIES:
       return merge({}, action.activities);
     case CLEAR_ACTIVITY_ERRORS:
-      // return merge({}, state, {errors: []})
       let newState = merge({}, state, {errors: []})
-      // return merge({},state,_nullRoute);
       return _nullActivity;
     default:
       return state;

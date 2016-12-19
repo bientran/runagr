@@ -19,16 +19,10 @@ class Profile extends React.Component {
     this.props.fetchAllRoutes(this.props.params.id);
   }
   componentDidUpdate() {
-    //
-    // if((!('activity' in this.props.activities) && (values(this.props.activities)[0].user_id != this.props.params.id || values(this.props.routeDetails)[0].user_id != this.props.params.id))){
-    //   this.props.fetchUserDetails(this.props.params.id);
-    //   this.props.fetchAllActivities(this.props.params.id);
-    //   this.props.fetchAllRoutes(this.props.params.id);
-    // }
+
   }
 
   componentWillReceiveProps(nextProps) {
-    // this.props.fetchCurrentUser(this.props.currentUser.id);
     if (nextProps.location !== this.props.location) {
       this.props.fetchUserDetails(this.props.params.id);
       this.props.fetchAllActivities(this.props.params.id);
@@ -51,8 +45,6 @@ class Profile extends React.Component {
         this.props.fetchCurrentUser(this.props.currentUser.id);
       });
 
-      // this.props.fetchCurrentUser(this.props.currentUser.id);
-      // this.props.router.push("/dashboard");
     }
   }
 
@@ -80,9 +72,6 @@ class Profile extends React.Component {
     if(!user || !activities || 'activity' in activities) {
       return (<div></div>);
     }
-    // if('activity' in activities || !activities) {
-    //   return (<div></div>);
-    // }
     let name = `${user.first_name} ${user.last_name}`;
     let profileName;
     if(name.length > 30) {
@@ -90,8 +79,6 @@ class Profile extends React.Component {
     } else {
       profileName = <h1>{user.first_name} {user.last_name}</h1>;
     }
-    // <ProfileFormContainer user={user} />
-    // {this.editButton()}
     let form = (this.props.currentUser.id === this.props.user.id) ? <ProfileFormContainer user={this.props.user} /> : <div></div>;
     return(
       <section className="profile">

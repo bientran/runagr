@@ -67,7 +67,6 @@ class MainNav extends React.Component {
     if (this.props.location.pathname === '/signup' || this.props.location.pathname === '/login') {
       return <div></div>;
     }
-    // let src = <%= asset_url("logo_small_orange.png") %>;
     return(
       <nav className="main-nav">
         <h1 className="logo"></h1>

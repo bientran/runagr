@@ -22,8 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   const something = document.getElementById('test');
   ReactDOM.render(<Root store={ store }/>, root);
-  // if (window.currentUser) {
-  //   ReactDOM.render(<h1>TEST</h1>, something);
-  // }
+
 
 });

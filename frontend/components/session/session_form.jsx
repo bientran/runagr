@@ -18,9 +18,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    // this.props.processForm(user).then(() => this.redirect());
     this.props.processForm(user).then(() => {
-      // this.setState({username: "", password: ""})
       this.props.router.push("/dashboard");
     });
   }

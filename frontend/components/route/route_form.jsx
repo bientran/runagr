@@ -24,7 +24,6 @@ class RouteForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.setState({user_id: this.props.currentUser.id});
     this.props.clearRouteErrors;
     const route = merge({}, this.state,{user_id: this.props.currentUser.id, coordinates: this.props.coordinates, distance: this.props.distance});
     this.props.createRoute(route).then((newRoute) => {
@@ -74,7 +73,6 @@ class RouteForm extends React.Component {
   }
 
   resetFields() {
-    // this.setState({coordinates: [], distance: 0, title: "", description: ""});
   };
 
   render() {

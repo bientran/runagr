@@ -11,9 +11,6 @@ const RouteReducer = (state = _nullRoute, action) => {
   switch(action.type) {
     case RECEIVE_ROUTE:
       const route = action.route;
-      // return merge({}, {
-      //   route
-      // });
       return {route};
     case RECEIVE_ROUTE_ERRORS:
       const errors = action.errors;
@@ -23,9 +20,7 @@ const RouteReducer = (state = _nullRoute, action) => {
     case RECEIVE_ROUTES:
       return merge({}, action.routes);
     case CLEAR_ROUTE_ERRORS:
-      // return merge({}, state, {errors: []})
       let newState = merge({}, state, {errors: []})
-      // return merge({},state,_nullRoute);
       return _nullRoute;
     default:
       return state;

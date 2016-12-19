@@ -11,7 +11,6 @@ class ActivityIndex extends React.Component {
     this.handleInput = this.handleInput.bind(this);
   }
   componentDidMount() {
-    // this.props.fetchRouteDetails(this.props.routeParams.id);
     this.props.fetchAllActivities(this.props.currentUser.id);
   }
 

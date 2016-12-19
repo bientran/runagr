@@ -6,7 +6,6 @@ import ActivityFeedContainer from '../activity/activity_feed/activity_feed_conta
 import ActivityStats from '../activity/activity_stats/activity_stats';
 import { values } from 'lodash';
 import FollowIndex from '../follow/follow_index';
-// import ActivityMonth from '../activity/activity_stats/activity_month';
 
 class Dashboard extends React.Component {
 
@@ -24,7 +23,6 @@ class Dashboard extends React.Component {
     if('activity' in activities || !activities) {
       return (<div></div>);
     }
-    // <ActivityMonth activities={values(activities)} />
     return(
       <section className="dashboard">
         <ActivityFeedContainer currentUser={this.props.currentUser}/>

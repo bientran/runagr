@@ -12,7 +12,6 @@ class RouteMap extends React.Component {
 
     const mapOptions = {
       center: { lng:-73.969, lat: 40.773 },
-      // center: center,
       zoom: 14
     };
 
@@ -21,7 +20,6 @@ class RouteMap extends React.Component {
     if (navigator.geolocation) {
       const that = this;
       navigator.geolocation.getCurrentPosition(function(pos) {
-        // center = pos.coords;
         const center =  { lng: pos.coords.longitude, lat: pos.coords.latitude };
         that.map.panTo(center);
       });
@@ -62,7 +60,6 @@ class RouteMap extends React.Component {
         return;
       }
 
-      // document.getElementById('route-map').className='route-map';
       const distance = document.getElementById('route-distance');
       const coords = document.getElementById('route-coords');
 
@@ -90,15 +87,11 @@ class RouteMap extends React.Component {
         travelMode: google.maps.DirectionsTravelMode.WALKING
       }, function(result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-          // path.pop();
           for (var i = 0, len = result.routes[0].overview_path.length;
               i < len; i++) {
             path.push(result.routes[0].overview_path[i]);
           }
           let polyLengthInMeters = google.maps.geometry.spherical.computeLength(path.getArray());
-          // distance.value = `${Math.round((polyLengthInMeters / 1609) * 100) / 100} miles `;
-          // coords.value = poly.getPath().getArray();
-          // coords.value = JSON.stringify(keyMarkers);
           let something = JSON.stringify(path.getArray());
           keyMarkers = JSON.stringify(path.getArray());
           that.setState({coordinates: JSON.stringify(path.getArray()),
@@ -113,7 +106,6 @@ class RouteMap extends React.Component {
     });
 
 
-  //const apiKey = "AIzaSyCCajBE7G--_90bCpnZdW9a-xo7Q1u71Kc";
 
   }
 

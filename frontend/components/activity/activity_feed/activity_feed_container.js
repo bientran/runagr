@@ -5,7 +5,6 @@ import { fetchCurrentUser } from '../../../actions/user_actions';
 import ActivityFeed from './activity_feed';
 
 const mapStateToProps = state => ({
-  // currentUser: state.session.currentUser,
   activities: state.activity,
   routes: state.route
 });

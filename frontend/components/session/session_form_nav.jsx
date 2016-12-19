@@ -9,7 +9,6 @@ class SessionFormNav extends React.Component {
   }
 
   render() {
-    // <a className="auth-link">something</a>
 
     return(
       <nav className="auth-nav group">

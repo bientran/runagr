@@ -1,5 +1,4 @@
 import React from 'react';
-// import RouteFormContainer from './route_form_container';
 import RouteDraw from './route_draw';
 import { values } from 'lodash';
 import SmallMap from './small_map';

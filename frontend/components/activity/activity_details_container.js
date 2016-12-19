@@ -14,7 +14,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchActivityDetails: (activity) => dispatch(fetchActivityDetails(activity)),
-    // fetchRouteDetails: (id) => dispatch(fetchRouteDetails(id))
   };
 };
 

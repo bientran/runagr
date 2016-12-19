@@ -18,7 +18,6 @@ class ActivityFeed extends React.Component {
   componentDidMount() {
     let follows = [this.props.currentUser.id];
     values(this.props.currentUser.followers).forEach((follow) => follows.push(follow.id));
-    // this.props.fetchRouteDetails(this.props.routeParams.id);
     this.props.fetchAllActivities(follows);
     this.props.fetchAllRoutes(follows);
   }
@@ -67,12 +66,8 @@ class ActivityFeed extends React.Component {
   render() {
 
     let activities = this.props.activities;
-    // if (values(activities).length === 0){
-    //   // return (<div className="activity-feed"></div>);
-    // }
     let currentDate = null;
     let feed = [];
-    // activities = values(activities).sort(this.compare).map((activity) => <ActivityItemContainer activity={activity} />);
     let localCount = 0;
     let last = (activities.length < this.state.count) ? activities.length : this.state.count;
     values(activities).sort(this.compare).slice(0,last).forEach((activity) => {

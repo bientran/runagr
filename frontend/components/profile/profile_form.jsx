@@ -14,13 +14,11 @@ class ProfileForm extends React.Component {
   }
 
   renderForm() {
-    // this.props.clearRouteErrors();
     document.getElementById('profile-form').style.visibility='visible';
     document.getElementById('overlay').className='map-overlay';
   }
 
   hideForm(e) {
-    // this.props.clearRouteErrors();
     e.preventDefault();
     document.getElementById('profile-form').style.visibility='hidden';
     document.getElementById('overlay').className='';
@@ -35,7 +33,6 @@ class ProfileForm extends React.Component {
     if(file){
       formData.append("user[picture]", file);
     }
-    // formData.append("user[id]", this.props.user.id);
     formData.append("user[first_name]", this.state.first_name);
     formData.append("user[last_name]", this.state.last_name);
     this.props.updateUser(formData, id);
@@ -63,7 +60,6 @@ class ProfileForm extends React.Component {
 
 
   render() {
-    // Location<input onChange={this.update("location")} value={this.state.location} type="text"></input>
 
     return(
       <section>
