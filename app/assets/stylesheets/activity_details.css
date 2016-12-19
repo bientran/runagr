@@ -28,7 +28,6 @@
 }
 .activity-block {
   border: 1px solid #ccc;
-  /*border-bottom: 0;*/
   float: left;
   width: 100%;
   margin-bottom: 20px;
@@ -53,7 +52,6 @@
   margin-top: 20px;
   float: left;
   border-left: 0;
-  /*padding: 20px;*/
   padding: 10px 0;
   border-bottom: 1px solid #ccc;
   border-top: 1px solid #ccc;
@@ -63,7 +61,6 @@
 }
 .activity-show-pace > h5 {
   font-size: 20px;
-  /*display: inline-block;*/
   margin: 0;
 
 }
@@ -76,7 +73,6 @@
 .activity-show-duration > h5 {
   font-size: 20px;
   margin: 0;
-  /*display: inline-block;*/
 }
 
 .activity-show-duration {
@@ -88,16 +84,12 @@
 .activity-show-distance > h5 {
   font-size: 20px;
   margin: 0;
-  /*display: inline-block;*/
 }
 
 .activity-show-distance {
-  /*display: inline-block;*/
   float: left;
   padding: 0;
 }
 
 .stat-label {
-/*float: left;*/
-/*display: inline-block;*/
 }

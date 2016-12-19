@@ -19,11 +19,8 @@
 
  /* --- ELEMENTS --- */
 body {
-  /*background: #ccc;*/
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
-  /*background: url("http://www.hdwallpaperspulse.com/wp-content/uploads/2015/01/26/running-image.jpg") no-repeat center center fixed;
-  background-size: 100% 100%;*/
   min-height: 500px;
   color: #333333;
 }
@@ -53,14 +50,10 @@ group:after {
 
 /* --- MAP --- */
 .route-map {
-  /*width: 500px;
-  height: 500px;*/
   top: 0;
   left: 0;
   width: 100%;
   position: absolute;
-
-  /*min-height: 500px;*/
   height: 100%;
 }
 

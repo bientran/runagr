@@ -1,14 +1,11 @@
-
 .weekday {
   width: 20px;
   height: 20px;
 }
 
 .month-day {
-  /*padding: 5px;*/
   width: 20px;
   height: 20px;
-  /*margin: 0 auto;*/
   text-align: center;
 }
 
@@ -31,7 +28,6 @@
   overflow:inherit;
   background: #fff;
   text-decoration: underline;
-  /*transition-duration: .3s;*/
 }
 
 .large-circle {

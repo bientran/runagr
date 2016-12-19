@@ -7,7 +7,6 @@
 
 .route-header {
   width: 1000px;
-
 }
 
 .route-details {
@@ -27,54 +26,24 @@
   margin-top: 40px;
 }
 
-/*.route-info:after {
-  display: block;
-  position: absolute;
-  height: 1px;
-  top: 200px;
-  left: 550px;
-  right: 0px;
-  background: #ccc;
-  content: "";
-  z-index: 1;
-}
-.route-info:before {
-  display: block;
-  position: absolute;
-  height: 1px;
-  top: 120px;
-  left: 550px;
-  right: 0px;
-  background: #ccc;
-  content: "";
-  z-index: 1;
-}*/
-
 .route-info {
-  /*float:left;*/
   display: block;
   margin-top: 40px;
-
 }
 
 .route-description {
   margin-left: 740px;
-  /*width: 200px;*/
   padding: 20px;
-  /*float: left;*/
   border-bottom: 1px solid #ccc;
 }
 
 .route-record {
   margin-left: 740px;
-  /*width: 200px;*/
   padding: 20px;
-  /*float: left;*/
   border-bottom: 1px solid #ccc;
 }
 
 .route-dist {
-
   margin-left: 740px;
   padding: 20px;
   border-top: 1px solid #ccc;

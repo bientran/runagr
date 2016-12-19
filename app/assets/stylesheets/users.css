@@ -8,12 +8,10 @@
   font-weight: lighter;
   padding-bottom: 20px;
   width: 100%;
-  /*border-bottom: 1px solid #ccc;*/
   margin-bottom: 20px;
 }
 
 .user-index {
-
 }
 
 .search-wrapper {
@@ -29,16 +27,13 @@
   font-size: 14px;
   padding: 10px;
   margin:10px 0 10px 10px;
-  /*width: 100%;*/
   background: #fff;
   border: 1px solid #ccc;
-  /*display: inline-block;*/
 }
 
 .user-index-table {
 border-collapse: collapse;
 width: 800px;
-
 }
 
 .user-index-header {

@@ -32,7 +32,6 @@
 .picture-input {
   padding: 10px 0;
   text-align: center;
-  /*margin: 0 auto;*/
   float: left;
   width: 200px;
 }
@@ -52,8 +51,6 @@
 }
 
 .profile-buttons {
-  /*width: 100%;*/
-  /*margin: 0 auto;*/
 }
 
 .profile-submit {

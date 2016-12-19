@@ -2,13 +2,10 @@
   color: #333333;
   border: 1px solid #ccc;
   padding: 20px;
-  /*width: 500px;*/
-  /*margin: 0 auto;*/
   float: left;
   margin-top: 103px;
   margin-left: 40px;
   width: 360px;
-  /*width: 500px;*/
 }
 .dashboard {
   min-width: 1070px;
@@ -17,13 +14,11 @@
 .stats-title {
   width: 100%;
   float: left;
-  /*width: 100%;*/
   font-size: 24px;
   font-weight: lighter;
   padding-bottom: 10px;
 }
 .stats-content {
-  /*width: 100%;*/
   float: left;
 }
 
@@ -36,7 +31,6 @@
 .stats-duration {
   font-size: 14px;
   font-weight: bold;
-
 }
 
 .stats-pace {
@@ -47,18 +41,13 @@
 
 .stats-graph-wrapper {
   float: left;
-  /*padding-left: 20px;*/
 }
 .stats-details {
-  /*padding-top: 20px;*/
-  /*border: 1px solid #ccc;*/
-  /*float: left;*/
   padding-right: 20px;
   text-align: center;
   float: left;
 }
 .bar {
-  /*margin:5px;*/
   width: 10px;
   padding: 5px;
   vertical-align: bottom;
@@ -67,7 +56,6 @@
   width: 10px;
   margin: 5px 0;
   padding: 0 5px;
-  /*padding: 5px;*/
   background: #333333;
   float: left;
 }
@@ -83,7 +71,6 @@
   margin-right: 0px;
   border: 1px solid #ccc;
   padding-top: 20px;
-  /*width: 150;*/
   min-height: 150px;
   float: left;
 }

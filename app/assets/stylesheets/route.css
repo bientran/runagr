@@ -1,14 +1,11 @@
 .map-controls {
   position: absolute;
-  /*top: 0;
-  left: 0;*/
   width: 100%;
   min-width: 500px;
   background: #F6F6F6;
   padding: 5px;
   border-bottom: 1px solid #ccc;
   color: #333333;
-  /*box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);*/
 }
 
 .route-distance {
@@ -20,8 +17,6 @@
   float: right;
   padding: 10px;
   background: #FC4C02;
-  /*border: 1px solid #ccc;*/
-  /*border-radius: 4px;*/
   margin-right: 20px;
   color: #fff;
   font-size: 14px;
@@ -36,30 +31,18 @@
   position: fixed;
   border-radius: 4px;
   width: 400px;
-  /*height: 378px;*/
-
-  /*top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;*/
-
   top: 50%;
   left: 50%;
-  margin-top: -189px; /* Negative half of height. */
+  margin-top: -189px;
   margin-left: -207px;
-  /*margin-left: auto;
-  margin-right: auto;
-  margin-top: 150px;*/
   background: #F6F6F6;
   padding: 5px;
   border: 1px solid #ccc;
   z-index: 100;
-
 }
 
 .map-form-errors {
   float: left;
-  /*display: block;*/
   font-size: 12px;
   color: #c00;
   margin: 15px 0 0 0;
@@ -85,8 +68,6 @@
 .map-form-fieldset {
   display: block;
   padding: 20px;
-
-
 }
 
 .map-input {
@@ -144,7 +125,6 @@
     height : 100%;
     position: absolute;
     background: #000;
-    /*display: block;*/
     opacity: .7;
     top: 0px;
     left: 0px;
