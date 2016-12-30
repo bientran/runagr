@@ -69,7 +69,7 @@ class MainNav extends React.Component {
     }
     return(
       <nav className="main-nav">
-        <h1 className="logo"></h1>
+        <Link to="/dashboard"><h1 className="logo"></h1></Link>
         <ul className="nav-links group">
           <li className="nav-link" onMouseOver={this.showDash} onMouseLeave={this.hideDash}>
             <Link className="dash" to="/dashboard">Dashboard<div className="arrow-down"></div></Link>
