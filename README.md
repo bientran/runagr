@@ -4,7 +4,7 @@
 
 [Runagr][heroku]
 
-[heroku]: https://runagr.herokuapp.com
+[heroku]: https://runagr.com
 
 Runagr is a full-stack web application that tracks your runs similar to Strava.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
