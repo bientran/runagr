@@ -24,7 +24,6 @@ class ProfileForm extends React.Component {
     e.preventDefault();
     document.getElementById('profile-form').style.visibility='hidden';
     document.getElementById('overlay').className='';
-    // this.setState({first_name: this.state.first_name, last_name: this.state.last_name, imageFile: null, imageUrl: null});
     this.setState({first_name: this.initialFirstName, last_name: this.initialLastName, imageFile: null, imageUrl:null});
   }
 
