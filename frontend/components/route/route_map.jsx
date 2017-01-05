@@ -20,15 +20,9 @@ class RouteMap extends React.Component {
     if (navigator.geolocation) {
       const that = this;
       $.getJSON('//freegeoip.net/json/?callback=?', function(data) {
-        console.log(JSON.stringify(data, null, 2));
         const center =  { lng: data.longitude, lat: data.latitude };
         that.map.panTo(center);
       });
-
-      // navigator.geolocation.getCurrentPosition(function(pos) {
-      //   const center =  { lng: pos.coords.longitude, lat: pos.coords.latitude };
-      //   that.map.panTo(center);
-      // });
     }
 
     const startMarker = new google.maps.Marker({
