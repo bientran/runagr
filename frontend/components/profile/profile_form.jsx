@@ -10,6 +10,8 @@ class ProfileForm extends React.Component {
     this.updateFile = this.updateFile.bind(this);
     this.renderForm = this.renderForm.bind(this);
     this.hideForm = this.hideForm.bind(this);
+    this.initialFirstName = this.props.user.first_name;
+    this.initialLastName = this.props.user.last_name;
 
   }
 
@@ -22,7 +24,8 @@ class ProfileForm extends React.Component {
     e.preventDefault();
     document.getElementById('profile-form').style.visibility='hidden';
     document.getElementById('overlay').className='';
-    this.setState({first_name: this.state.first_name, last_name: this.state.last_name, imageFile: null, imageUrl: null})
+    // this.setState({first_name: this.state.first_name, last_name: this.state.last_name, imageFile: null, imageUrl: null});
+    this.setState({first_name: this.initialFirstName, last_name: this.initialLastName, imageFile: null, imageUrl:null});
   }
 
   handleSubmit(e) {
@@ -36,6 +39,8 @@ class ProfileForm extends React.Component {
     formData.append("user[first_name]", this.state.first_name);
     formData.append("user[last_name]", this.state.last_name);
     this.props.updateUser(formData, id);
+    this.initialFirstName = this.state.first_name;
+    this.initialLastName = this.state.last_name;
     this.hideForm(e);
   }
 
@@ -68,8 +73,8 @@ class ProfileForm extends React.Component {
       <section className="profile-form-wrapper">
         <form id="profile-form" className="profile-form" onSubmit={this.handleSubmit} encType="multipart/form-data">
           <section className="profile-form-fieldset">
-            <label><p>First Name</p><input className="profile-name" onChange={this.update("first_name")} type="text"></input></label>
-            <label><p>Last Name</p><input className="profile-name" onChange={this.update("last_name")} type="text"></input></label>
+            <label><p>First Name</p><input className="profile-name" onChange={this.update("first_name")} type="text" value={this.state.first_name}></input></label>
+            <label><p>Last Name</p><input className="profile-name" onChange={this.update("last_name")} type="text" value={this.state.last_name}></input></label>
             <section className="profile-buttons">
               <button onClick={this.hideForm} className="profile-cancel">Cancel</button>
               <button className="profile-submit">Submit</button>
