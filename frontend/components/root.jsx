@@ -25,6 +25,7 @@ function _redirectIfLoggedIn(_, replace){
 
 function _redirectIfNotLoggedIn(_, replace){
   if (!store.getState().session.currentUser) {
+    console.log("YO");
     replace("/login");
   }
 }
@@ -34,7 +35,7 @@ const Root = ({ store }) => (
   <Provider store={ store }>
     <Router history={hashHistory}>
       <Route path="/" component={ App }>
-        <IndexRedirect to="signup" />
+        <IndexRedirect to="login" />
         <Route path="/dashboard" component={ DashboardContainer } onEnter={ _redirectIfNotLoggedIn }/>
         <Route path="/newroute" component={ RouteMap } onEnter={ _redirectIfNotLoggedIn } />
         <Route path="/routes" component={ RouteIndexContainer } onEnter={ _redirectIfNotLoggedIn } />

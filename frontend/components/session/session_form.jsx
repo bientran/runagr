@@ -84,7 +84,7 @@ class SessionForm extends React.Component {
     this.setState({email: "testuser@example.com", password: "password"})
     const user = {email: "testuser@example.com", password: "password"};
     this.props.processForm(user).then(() => {
-      this.props.router.push("/");
+      this.props.router.push("/dashboard");
     });
   }
 
