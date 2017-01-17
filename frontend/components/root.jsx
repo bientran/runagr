@@ -17,21 +17,18 @@ import ActivityMonth from './activity/activity_stats/activity_month';
 import UserIndexContainer from './user/user_index_container';
 import ProfileFormContainer from './profile/profile_form_container';
 
-function _redirectIfLoggedIn(_, replace){
-  if (store.getState().session.currentUser) {
-    replace("/dashboard");
+const Root = ({ store }) => {
+  function _redirectIfLoggedIn(_, replace){
+    if (store.getState().session.currentUser) {
+      replace("/dashboard");
+    }
   }
-}
-
-function _redirectIfNotLoggedIn(_, replace){
-  if (!store.getState().session.currentUser) {
-    console.log("YO");
-    replace("/login");
+  function _redirectIfNotLoggedIn(_, replace){
+    if (!store.getState().session.currentUser) {
+      replace("/login");
+    }
   }
-}
-
-
-const Root = ({ store }) => (
+  return (
   <Provider store={ store }>
     <Router history={hashHistory}>
       <Route path="/" component={ App }>
@@ -52,6 +49,6 @@ const Root = ({ store }) => (
       </Route>
     </Router>
   </Provider>
-);
+)};
 
 export default Root;
