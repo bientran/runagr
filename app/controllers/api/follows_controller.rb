@@ -1,7 +1,6 @@
 class Api::FollowsController < ApplicationController
   def create
     @follow = Follow.new(follow_params)
-    p @follow
     @follow.save
     @user = User.find(params[:follow][:follow_id])
     render 'api/users/show'
